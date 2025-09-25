@@ -1,0 +1,25 @@
+name: Update Release
+
+on:
+  repository_dispatch:
+    types: [update-release]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Download release assets
+        run: |
+          # This will be populated by the main repository's release workflow
+          echo "Release update triggered"
+          
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Update release: ${{ github.event.client_payload.version }}" || exit 0
+          git push
