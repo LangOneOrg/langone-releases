@@ -1,7 +1,7 @@
 # Binaries
-*.exe
-langone
-langone.exe
+# *.exe
+# langone
+# langone.exe
 
 # OS generated files
 .DS_Store
