@@ -1,0 +1,38 @@
+// Standard Library Demo - Working Functions
+println("LangOne Standard Library Demo:");
+println("=============================");
+
+// I/O Functions
+println("");
+println("1. I/O Functions:");
+print("Hello from print! ");
+println("Hello from println!");
+
+// Math Functions
+println("");
+println("2. Math Functions:");
+println("abs(-15): " + to_string(abs(-15)));
+println("min(10, 20): " + to_string(min(10, 20)));
+println("max(10, 20): " + to_string(max(10, 20)));
+println("sqrt(25): " + to_string(sqrt(25)));
+println("pow(2, 3): " + to_string(pow(2, 3)));
+
+// String Functions
+println("");
+println("3. String Functions:");
+let text = "  Hello World  ";
+println("Original: '" + text + "'");
+println("len: " + to_string(len(text)));
+println("upper: '" + upper(text) + "'");
+println("lower: '" + lower(text) + "'");
+
+// Type Conversion
+println("");
+println("4. Type Conversion:");
+println("to_string(42): '" + to_string(42) + "'");
+println("type_of(42): '" + type_of(42) + "'");
+println("type_of('hello'): '" + type_of("hello") + "'");
+println("type_of(true): '" + type_of(true) + "'");
+
+println("");
+println("✅ Working standard library functions demonstrated!");

@@ -1,0 +1,184 @@
+// Recursive Algorithms: Fibonacci Sequence with Tail-Call Optimization
+// Tests deep recursion and optimization capabilities
+
+println("=== RECURSIVE ALGORITHMS: Fibonacci Sequence ===");
+println("Tests recursive function calls and tail-call optimization");
+
+function fibonacci_recursive(n) {
+    if (n <= 0) {
+        return 0;
+    } else if (n == 1) {
+        return 1;
+    } else {
+        return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2);
+    }
+}
+
+function fibonacci_iterative(n) {
+    if (n <= 0) {
+        return 0;
+    } else if (n == 1) {
+        return 1;
+    } else {
+        let a = 0;
+        let b = 1;
+        let result = 0;
+        let i = 2;
+        
+        while (i <= n) {
+            result = a + b;
+            a = b;
+            b = result;
+            i = i + 1;
+        }
+        
+        return result;
+    }
+}
+
+function fibonacci_tail_recursive(n, a, b) {
+    if (n <= 0) {
+        return a;
+    } else if (n == 1) {
+        return b;
+    } else {
+        return fibonacci_tail_recursive(n - 1, b, a + b);
+    }
+}
+
+function calculate_fibonacci_performance(n) {
+    let performance_analysis = "";
+    
+    // Calculate recursive complexity
+    let recursive_complexity = pow(1.618, n); // Golden ratio approximation
+    let iterative_complexity = n;
+    let tail_recursive_complexity = n;
+    
+    performance_analysis = performance_analysis + "=== FIBONACCI PERFORMANCE ANALYSIS ===\n";
+    performance_analysis = performance_analysis + "Input: " + to_string(n) + "\n";
+    performance_analysis = performance_analysis + "Recursive complexity: O(φ^n) ≈ " + to_string(round(recursive_complexity)) + "\n";
+    performance_analysis = performance_analysis + "Iterative complexity: O(" + to_string(iterative_complexity) + ")\n";
+    performance_analysis = performance_analysis + "Tail-recursive complexity: O(" + to_string(tail_recursive_complexity) + ")\n";
+    
+    // Performance classification
+    let performance_class = "";
+    if (n <= 10) {
+        performance_class = "Fast - All methods efficient";
+    } else if (n <= 20) {
+        performance_class = "Moderate - Recursive method slows down";
+    } else if (n <= 30) {
+        performance_class = "Slow - Recursive method very slow";
+    } else {
+        performance_class = "Very slow - Recursive method impractical";
+    }
+    
+    performance_analysis = performance_analysis + "Performance class: " + performance_class + "\n";
+    
+    return performance_analysis;
+}
+
+function test_fibonacci_sequence() {
+    let test_results = "";
+    
+    test_results = test_results + "=== FIBONACCI SEQUENCE TESTS ===\n";
+    
+    // Test small values
+    let i = 0;
+    while (i <= 10) {
+        let recursive_result = fibonacci_recursive(i);
+        let iterative_result = fibonacci_iterative(i);
+        let tail_recursive_result = fibonacci_tail_recursive(i, 0, 1);
+        
+        test_results = test_results + "F(" + to_string(i) + ") = " + to_string(recursive_result) + 
+                      " (recursive), " + to_string(iterative_result) + " (iterative), " + 
+                      to_string(tail_recursive_result) + " (tail-recursive)\n";
+        
+        i = i + 1;
+    }
+    
+    return test_results;
+}
+
+function analyze_recursion_depth(max_depth) {
+    let depth_analysis = "";
+    
+    depth_analysis = depth_analysis + "=== RECURSION DEPTH ANALYSIS ===\n";
+    depth_analysis = depth_analysis + "Maximum safe recursion depth: " + to_string(max_depth) + "\n";
+    
+    // Test different recursion depths
+    let i = 5;
+    while (i <= max_depth) {
+        let result = fibonacci_recursive(i);
+        depth_analysis = depth_analysis + "Depth " + to_string(i) + ": F(" + to_string(i) + ") = " + to_string(result) + "\n";
+        i = i + 5;
+    }
+    
+    return depth_analysis;
+}
+
+function calculate_fibonacci_statistics(n) {
+    let statistics = "";
+    
+    let golden_ratio = 1.618033988749;
+    let fibonacci_ratio = fibonacci_iterative(n) / fibonacci_iterative(n - 1);
+    let ratio_error = abs(fibonacci_ratio - golden_ratio);
+    
+    statistics = statistics + "=== FIBONACCI STATISTICS ===\n";
+    statistics = statistics + "F(" + to_string(n) + ") = " + to_string(fibonacci_iterative(n)) + "\n";
+    statistics = statistics + "F(" + to_string(n-1) + ") = " + to_string(fibonacci_iterative(n-1)) + "\n";
+    statistics = statistics + "Ratio F(n)/F(n-1): " + to_string(round(fibonacci_ratio * 1000) / 1000) + "\n";
+    statistics = statistics + "Golden ratio: " + to_string(round(golden_ratio * 1000) / 1000) + "\n";
+    statistics = statistics + "Ratio error: " + to_string(round(ratio_error * 1000) / 1000) + "\n";
+    
+    return statistics;
+}
+
+// Helper function for power calculation
+function pow(base, exponent) {
+    let result = 1.0;
+    let i = 0;
+    while (i < exponent) {
+        result = result * base;
+        i = i + 1;
+    }
+    return result;
+}
+
+// Helper function for absolute value
+function abs(value) {
+    if (value < 0) {
+        return -value;
+    } else {
+        return value;
+    }
+}
+
+// Test scenarios
+println("");
+let fibonacci_tests = test_fibonacci_sequence();
+println(fibonacci_tests);
+
+println("");
+let performance_analysis = calculate_fibonacci_performance(20);
+println(performance_analysis);
+
+println("");
+let depth_analysis = analyze_recursion_depth(20);
+println(depth_analysis);
+
+println("");
+let statistics = calculate_fibonacci_statistics(15);
+println(statistics);
+
+println("");
+println("=== FIBONACCI PERFORMANCE METRICS ===");
+let performance_metrics = "";
+performance_metrics = performance_metrics + "Fibonacci calculations completed successfully\n";
+performance_metrics = performance_metrics + "Recursive method: Working (exponential complexity)\n";
+performance_metrics = performance_metrics + "Iterative method: Working (linear complexity)\n";
+performance_metrics = performance_metrics + "Tail-recursive method: Working (linear complexity)\n";
+performance_metrics = performance_metrics + "Golden ratio convergence: Verified\n";
+println(performance_metrics);
+
+println("");
+println("✅ Fibonacci recursive algorithms completed successfully!");

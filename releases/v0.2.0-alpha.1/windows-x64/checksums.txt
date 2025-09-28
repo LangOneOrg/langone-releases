@@ -1,0 +1,6 @@
+SHA256 hash of langone.exe:
+3c559144a47c84808086ac5b5e4fa63bcf32f496e430708b7f272886a46cce7c
+CertUtil: -hashfile command completed successfully.
+SHA256 hash of lo.exe:
+a0f2e58a28ef2577d7e9c13db1be77c15d8c906dce24180ff29c773adf440454
+CertUtil: -hashfile command completed successfully.

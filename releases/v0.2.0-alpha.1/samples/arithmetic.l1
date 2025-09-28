@@ -1,0 +1,19 @@
+// Arithmetic Operations - Math in LangOne
+let a = 10;
+let b = 3;
+
+print("Arithmetic Operations:");
+print("a = " + to_string(a));
+print("b = " + to_string(b));
+print("");
+
+print("Addition: " + to_string(a + b));
+print("Subtraction: " + to_string(a - b));
+print("Multiplication: " + to_string(a * b));
+print("Division: " + to_string(a / b));
+print("Modulo: " + to_string(a % b));
+print("Power: " + to_string(pow(a, b)));
+
+// Precedence test
+let result = 2 + 3 * 4;
+print("Precedence (2 + 3 * 4): " + to_string(result));
