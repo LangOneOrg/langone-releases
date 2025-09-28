@@ -109,7 +109,7 @@ certutil -hashfile lo.exe SHA256
 3. **Run** `langone --help` or `lo --help` to see available commands
 4. **Start coding** with the REPL: `langone repl` or `lo repl`
 
-## 📋 What's New in v0.1.0-alpha.1
+## 📋 What's New in v0.1.0-alpha.2
 
 - ✅ **Fixed mixed numeric type operations** (Float/Integer arithmetic)
 - ✅ **Dual executables** (`langone.exe` and `lo.exe` for convenience)
