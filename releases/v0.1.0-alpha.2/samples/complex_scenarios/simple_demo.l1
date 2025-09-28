@@ -1,0 +1,1 @@
+print("Hello from LangOne!"); let x = 42; print("x = " + to_string(x));

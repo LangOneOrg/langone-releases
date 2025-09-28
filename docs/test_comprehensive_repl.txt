@@ -1,0 +1,27 @@
+help
+version
+42 + 8
+let x = 42;
+x * 2
+let name = "LangOne";
+upper(name)
+let numbers = [1, 2, 3];
+len(numbers)
+push(numbers, 4)
+numbers
+let result = match (x) {
+    42 => "Found 42",
+    _ => "Not 42"
+};
+result
+abs(-15)
+min(10, 20)
+max(10, 20)
+sqrt(25)
+type_of(x)
+type_of(name)
+type_of(numbers)
+vars
+stats
+history
+exit

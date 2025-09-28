@@ -1,0 +1,9 @@
+help
+version
+42 + 8
+"Hello" + " " + "World"
+match (42) { \
+    42 => "Found 42", \
+    _ => "Not 42" \
+}
+exit

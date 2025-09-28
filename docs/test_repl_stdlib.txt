@@ -1,0 +1,13 @@
+help
+version
+abs(-42)
+min(10, 20)
+max(10, 20)
+sqrt(25)
+upper("hello")
+lower("WORLD")
+trim("  test  ")
+contains("hello world", "world")
+to_string(42)
+type_of("hello")
+exit
