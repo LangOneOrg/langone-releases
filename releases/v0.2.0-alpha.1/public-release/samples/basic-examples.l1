@@ -1,0 +1,35 @@
+// Basic Examples in LangOne
+
+// Variables
+let name = "Alice";
+let age = 25;
+let isStudent = true;
+
+print("Name: " + name);
+print("Age: " + age);
+print("Is Student: " + isStudent);
+
+// Math operations
+let a = 10;
+let b = 5;
+
+print("Addition: " + (a + b));
+print("Multiplication: " + (a * b));
+print("Division: " + (a / b));
+
+// Arrays
+let fruits = ["apple", "banana", "orange"];
+print("First fruit: " + fruits[0]);
+print("All fruits: " + fruits);
+
+// Control flow
+if (age >= 18) {
+    print(name + " is an adult");
+} else {
+    print(name + " is a minor");
+}
+
+// Loops
+for (i in 5) {
+    print("Count: " + i);
+}
