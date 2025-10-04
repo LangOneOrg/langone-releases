@@ -17,8 +17,8 @@
 - **✅ #1 RANKING** in speed and memory efficiency among all languages
 
 #### Download Links
-- **Windows x64**: [Download langone.exe](https://github.com/LangOneOrg/langone-releases/raw/main/releases/v0.2.0-alpha.1/windows-x64/langone.exe) (2.4MB)
-- **Short Alias**: [Download lo.exe](https://github.com/LangOneOrg/langone-releases/raw/main/releases/v0.2.0-alpha.1/windows-x64/lo.exe) (2.4MB)
+- **Windows x64**: [Download langone.exe](https://github.com/LangOneOrg/langone-releases/raw/main/releases/v0.2.0-alpha.1/public-release/windows-x64/langone.exe) (2.4MB)
+- **Short Alias**: [Download lo.exe](https://github.com/LangOneOrg/langone-releases/raw/main/releases/v0.2.0-alpha.1/public-release/windows-x64/lo.exe) (2.4MB)
 
 **💡 Download Tips:**
 - If the link opens in browser instead of downloading, **right-click** and select **"Save link as..."** or **"Download linked file"**
@@ -29,19 +29,19 @@
 **Using curl:**
 ```bash
 # Download langone.exe
-curl -L -o langone.exe "https://github.com/LangOneOrg/langone-releases/raw/main/releases/v0.2.0-alpha.1/windows-x64/langone.exe"
+curl -L -o langone.exe "https://github.com/LangOneOrg/langone-releases/raw/main/releases/v0.2.0-alpha.1/public-release/windows-x64/langone.exe"
 
 # Download lo.exe
-curl -L -o lo.exe "https://github.com/LangOneOrg/langone-releases/raw/main/releases/v0.2.0-alpha.1/windows-x64/lo.exe"
+curl -L -o lo.exe "https://github.com/LangOneOrg/langone-releases/raw/main/releases/v0.2.0-alpha.1/public-release/windows-x64/lo.exe"
 ```
 
 **Using PowerShell:**
 ```powershell
 # Download langone.exe
-Invoke-WebRequest -Uri "https://github.com/LangOneOrg/langone-releases/raw/main/releases/v0.2.0-alpha.1/windows-x64/langone.exe" -OutFile "langone.exe"
+Invoke-WebRequest -Uri "https://github.com/LangOneOrg/langone-releases/raw/main/releases/v0.2.0-alpha.1/public-release/windows-x64/langone.exe" -OutFile "langone.exe"
 
 # Download lo.exe
-Invoke-WebRequest -Uri "https://github.com/LangOneOrg/langone-releases/raw/main/releases/v0.2.0-alpha.1/windows-x64/lo.exe" -OutFile "lo.exe"
+Invoke-WebRequest -Uri "https://github.com/LangOneOrg/langone-releases/raw/main/releases/v0.2.0-alpha.1/public-release/windows-x64/lo.exe" -OutFile "lo.exe"
 ```
 
 **🛡️ Security Note:**
@@ -160,10 +160,14 @@ langone-releases/
 │   │   ├── INTERPRETER_OPTIMIZATION_ANALYSIS.md # Technical details
 │   │   ├── LANGONE_USER_GUIDE.md             # User guide
 │   │   ├── samples/           # Comprehensive sample programs
-│   │   └── windows-x64/       # Windows binaries and docs
-│   │       ├── langone.exe    # Main executable (2.4MB)
-│   │       ├── lo.exe         # Short alias (2.4MB)
-│   │       └── checksums.txt  # SHA256 checksums
+│   │   ├── public-release/    # Public release package
+│   │   │   ├── windows-x64/   # Windows binaries and docs
+│   │   │   │   ├── langone.exe    # Main executable (2.4MB)
+│   │   │   │   ├── lo.exe         # Short alias (2.4MB)
+│   │   │   │   └── README.md      # Installation guide
+│   │   │   ├── samples/       # Sample programs
+│   │   │   └── tutorials/     # Complete tutorial series
+│   │   └── docs/              # Additional documentation
 │   └── v0.1.0-alpha.2/       # Previous: Production-Ready Alpha
 │       ├── RELEASE_NOTES.md   # Release notes
 │       └── windows-x64/       # Windows binaries
@@ -176,9 +180,13 @@ Verify your download integrity using SHA256 checksums:
 
 ### **v0.2.0-alpha.1 (Latest)**
 ```bash
-# Windows - Check the checksums.txt file for current hashes
+# Windows - Check the SHA256 files for current hashes
 certutil -hashfile langone.exe SHA256
 certutil -hashfile lo.exe SHA256
+
+# Expected hashes (from public-release/windows-x64/*.sha256 files):
+# langone.exe: Check langone.exe.sha256 file
+# lo.exe: Check lo.exe.sha256 file
 ```
 
 ### **v0.1.0-alpha.2 (Previous)**
