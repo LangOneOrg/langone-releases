@@ -1,0 +1,27 @@
+// Simple Python Interop Test
+project "PythonInteropSimple" {
+    version = "0.4.0"
+}
+
+// Test basic Python interop functions
+println("=== Python Interop Simple Test ===");
+
+// Test 1: Python function call
+let result1 = python_call("math", "sqrt", [16]);
+println("Python sqrt(16): ", result1);
+
+// Test 2: Python transpilation
+let python_code = "import numpy as np";
+let transpiled = python_transpile(python_code);
+println("Transpiled code: ", transpiled);
+
+// Test 3: NumPy array
+let np_array = numpy_array([1, 2, 3]);
+println("NumPy array: ", np_array);
+
+// Test 4: Zero-copy sharing
+let data = [1, 2, 3];
+let region_id = zero_copy_share(data);
+println("Shared region: ", region_id);
+
+println("Python Interop test completed!");

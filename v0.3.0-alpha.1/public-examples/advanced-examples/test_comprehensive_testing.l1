@@ -1,0 +1,65 @@
+# Test Suite for R22: Comprehensive Testing
+# This file tests the comprehensive testing features of LangOne
+
+# Test 1: Test Runner Initialization
+print("=== Test 1: Test Runner Initialization ===")
+test_runner_init = test_runner()
+print("Test runner initialized:", test_runner_init)
+
+# Test 2: Run Unit Tests
+print("\n=== Test 2: Run Unit Tests ===")
+unit_tests_result = run_unit_tests()
+print("Unit tests result:", unit_tests_result)
+
+# Test 3: Run Integration Tests
+print("\n=== Test 3: Run Integration Tests ===")
+integration_tests_result = run_integration_tests()
+print("Integration tests result:", integration_tests_result)
+
+# Test 4: Run Performance Tests
+print("\n=== Test 4: Run Performance Tests ===")
+performance_tests_result = run_performance_tests()
+print("Performance tests result:", performance_tests_result)
+
+# Test 5: Run Security Tests
+print("\n=== Test 5: Run Security Tests ===")
+security_tests_result = run_security_tests()
+print("Security tests result:", security_tests_result)
+
+# Test 6: Run Regression Tests
+print("\n=== Test 6: Run Regression Tests ===")
+regression_tests_result = run_regression_tests()
+print("Regression tests result:", regression_tests_result)
+
+# Test 7: Run Load Tests
+print("\n=== Test 7: Run Load Tests ===")
+load_tests_result = run_load_tests()
+print("Load tests result:", load_tests_result)
+
+# Test 8: Run Stress Tests
+print("\n=== Test 8: Run Stress Tests ===")
+stress_tests_result = run_stress_tests()
+print("Stress tests result:", stress_tests_result)
+
+# Test 9: Generate Test Report
+print("\n=== Test 9: Generate Test Report ===")
+test_report_result = generate_test_report()
+print("Test report result:", test_report_result)
+
+# Test 10: Get Test Coverage
+print("\n=== Test 10: Get Test Coverage ===")
+test_coverage_result = test_coverage()
+print("Test coverage result:", test_coverage_result)
+
+# Test 11: Run Benchmark Tests
+print("\n=== Test 11: Run Benchmark Tests ===")
+benchmark_tests_result = benchmark_tests()
+print("Benchmark tests result:", benchmark_tests_result)
+
+# Test 12: Run Specific Test Suite
+print("\n=== Test 12: Run Specific Test Suite ===")
+specific_suite_result = run_tests("comprehensive_suite")
+print("Specific test suite result:", specific_suite_result)
+
+print("\n=== Comprehensive Testing Test Suite Completed ===")
+print("All testing functions have been successfully tested!")

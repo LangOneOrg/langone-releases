@@ -1,0 +1,145 @@
+// Green Code: Edge AI Power Optimization Demonstration
+println("=== GREEN CODE: Edge AI Power Optimization ===");
+
+// Model optimization scenarios
+let gpt2_original_power = 5.0;
+let bert_original_power = 4.4;
+let tinybert_original_power = 0.56;
+
+// Optimization levels
+let light_optimization = 0.8;  // 20% reduction
+let moderate_optimization = 0.5; // 50% reduction  
+let heavy_optimization = 0.2;  // 80% reduction
+
+println("");
+println("=== MODEL OPTIMIZATION ANALYSIS ===");
+
+// GPT-2 Small optimization
+let gpt2_light = gpt2_original_power * light_optimization;
+let gpt2_moderate = gpt2_original_power * moderate_optimization;
+let gpt2_heavy = gpt2_original_power * heavy_optimization;
+
+println("GPT-2 Small (500MB):");
+println("  Original: " + to_string(round(gpt2_original_power)) + "W");
+println("  Light optimization: " + to_string(round(gpt2_light)) + "W");
+println("  Moderate optimization: " + to_string(round(gpt2_moderate)) + "W");
+println("  Heavy optimization: " + to_string(round(gpt2_heavy)) + "W");
+
+// BERT Base optimization
+let bert_light = bert_original_power * light_optimization;
+let bert_moderate = bert_original_power * moderate_optimization;
+let bert_heavy = bert_original_power * heavy_optimization;
+
+println("");
+println("BERT Base (440MB):");
+println("  Original: " + to_string(round(bert_original_power)) + "W");
+println("  Light optimization: " + to_string(round(bert_light)) + "W");
+println("  Moderate optimization: " + to_string(round(bert_moderate)) + "W");
+println("  Heavy optimization: " + to_string(round(bert_heavy)) + "W");
+
+// TinyBERT optimization
+let tinybert_light = tinybert_original_power * light_optimization;
+let tinybert_moderate = tinybert_original_power * moderate_optimization;
+let tinybert_heavy = tinybert_original_power * heavy_optimization;
+
+println("");
+println("TinyBERT (56MB):");
+println("  Original: " + to_string(round(tinybert_original_power)) + "W");
+println("  Light optimization: " + to_string(round(tinybert_light)) + "W");
+println("  Moderate optimization: " + to_string(round(tinybert_moderate)) + "W");
+println("  Heavy optimization: " + to_string(round(tinybert_heavy)) + "W");
+
+println("");
+println("=== EDGE DEPLOYMENT FEASIBILITY ===");
+
+// Edge device power budgets
+let raspberry_pi_budget = 3.0;
+let iot_device_budget = 0.5;
+let smartphone_budget = 2.0;
+
+// Check feasibility for GPT-2
+let gpt2_rpi_feasible = "";
+if (gpt2_heavy <= raspberry_pi_budget) {
+    gpt2_rpi_feasible = "✅ Feasible";
+} else {
+    gpt2_rpi_feasible = "❌ Not feasible";
+}
+
+let gpt2_iot_feasible = "";
+if (gpt2_heavy <= iot_device_budget) {
+    gpt2_iot_feasible = "✅ Feasible";
+} else {
+    gpt2_iot_feasible = "❌ Not feasible";
+}
+
+println("GPT-2 deployment feasibility:");
+println("  Raspberry Pi (3W budget): " + gpt2_rpi_feasible);
+println("  IoT Device (0.5W budget): " + gpt2_iot_feasible);
+
+// Check feasibility for BERT
+let bert_rpi_feasible = "";
+if (bert_heavy <= raspberry_pi_budget) {
+    bert_rpi_feasible = "✅ Feasible";
+} else {
+    bert_rpi_feasible = "❌ Not feasible";
+}
+
+let bert_iot_feasible = "";
+if (bert_heavy <= iot_device_budget) {
+    bert_iot_feasible = "✅ Feasible";
+} else {
+    bert_iot_feasible = "❌ Not feasible";
+}
+
+println("");
+println("BERT deployment feasibility:");
+println("  Raspberry Pi (3W budget): " + bert_rpi_feasible);
+println("  IoT Device (0.5W budget): " + bert_iot_feasible);
+
+// Check feasibility for TinyBERT
+let tinybert_rpi_feasible = "";
+if (tinybert_heavy <= raspberry_pi_budget) {
+    tinybert_rpi_feasible = "✅ Feasible";
+} else {
+    tinybert_rpi_feasible = "❌ Not feasible";
+}
+
+let tinybert_iot_feasible = "";
+if (tinybert_heavy <= iot_device_budget) {
+    tinybert_iot_feasible = "✅ Feasible";
+} else {
+    tinybert_iot_feasible = "❌ Not feasible";
+}
+
+println("");
+println("TinyBERT deployment feasibility:");
+println("  Raspberry Pi (3W budget): " + tinybert_rpi_feasible);
+println("  IoT Device (0.5W budget): " + tinybert_iot_feasible);
+
+println("");
+println("=== POWER EFFICIENCY METRICS ===");
+
+// Calculate throughput per watt
+let gpt2_throughput = 10.0; // inferences per second
+let bert_throughput = 15.0;
+let tinybert_throughput = 50.0;
+
+let gpt2_efficiency = gpt2_throughput / gpt2_heavy;
+let bert_efficiency = bert_throughput / bert_heavy;
+let tinybert_efficiency = tinybert_throughput / tinybert_heavy;
+
+println("Throughput per watt (inferences/W):");
+println("  GPT-2: " + to_string(round(gpt2_efficiency)) + " inf/W");
+println("  BERT: " + to_string(round(bert_efficiency)) + " inf/W");
+println("  TinyBERT: " + to_string(round(tinybert_efficiency)) + " inf/W");
+
+println("");
+println("=== GREEN CODE OPTIMIZATION TECHNIQUES ===");
+println("1. Quantization: FP32 → INT8 → INT4 (60-80% power reduction)");
+println("2. Pruning: Remove unnecessary weights (40-60% power reduction)");
+println("3. Distillation: Transfer knowledge to smaller model (50-70% power reduction)");
+println("4. Dynamic batching: Optimize inference scheduling (10-20% power reduction)");
+println("5. Kernel optimization: Hardware-specific optimizations (20-30% power reduction)");
+
+println("");
+println("✅ Green Code analysis completed successfully!");

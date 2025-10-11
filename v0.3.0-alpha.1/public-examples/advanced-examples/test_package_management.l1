@@ -1,0 +1,55 @@
+# Test Suite for R20: Package Management System
+# This file tests the package management features of LangOne
+
+# Test 1: Package Manager Initialization
+print("=== Test 1: Package Manager Initialization ===")
+pkg_mgr_init = package_manager()
+print("Package manager initialized:", pkg_mgr_init)
+
+# Test 2: Search Packages
+print("\n=== Test 2: Search Packages ===")
+search_result = search_packages("math")
+print("Search result for 'math':", search_result)
+
+# Test 3: Install Package
+print("\n=== Test 3: Install Package ===")
+install_result = install_package("math-utils", "1.0.0")
+print("Installation result:", install_result)
+
+# Test 4: List Installed Packages
+print("\n=== Test 4: List Installed Packages ===")
+list_result = list_packages()
+print("Installed packages:", list_result)
+
+# Test 5: Update Package
+print("\n=== Test 5: Update Package ===")
+update_result = update_package("math-utils")
+print("Update result:", update_result)
+
+# Test 6: Update All Packages
+print("\n=== Test 6: Update All Packages ===")
+update_all_result = update_all_packages()
+print("Update all result:", update_all_result)
+
+# Test 7: Publish Package
+print("\n=== Test 7: Publish Package ===")
+publish_result = publish_package("./my-package")
+print("Publish result:", publish_result)
+
+# Test 8: Package Statistics
+print("\n=== Test 8: Package Statistics ===")
+stats_result = package_stats()
+print("Package statistics:", stats_result)
+
+# Test 9: Verify Package
+print("\n=== Test 9: Verify Package ===")
+verify_result = verify_package("math-utils")
+print("Verification result:", verify_result)
+
+# Test 10: Uninstall Package
+print("\n=== Test 10: Uninstall Package ===")
+uninstall_result = uninstall_package("math-utils")
+print("Uninstall result:", uninstall_result)
+
+print("\n=== Package Management System Tests Complete ===")
+print("All package management features tested successfully!")

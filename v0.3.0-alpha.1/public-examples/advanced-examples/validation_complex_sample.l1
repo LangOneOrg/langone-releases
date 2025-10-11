@@ -1,0 +1,95 @@
+// Complex Real-World Sample - Calculator Application
+println("=== LangOne Calculator Application ===");
+println("=====================================");
+
+// Calculator state
+let memory = 0.0;
+let history_count = 0;
+
+// Function to perform calculations
+println("=== Basic Calculator Operations ===");
+
+// Addition operations
+let num1 = 15.5;
+let num2 = 7.3;
+let sum_result = num1 + num2;
+println("Addition: " + to_string(num1) + " + " + to_string(num2) + " = " + to_string(sum_result));
+
+// Subtraction operations
+let num3 = 100;
+let num4 = 25.7;
+let sub_result = num3 - num4;
+println("Subtraction: " + to_string(num3) + " - " + to_string(num4) + " = " + to_string(sub_result));
+
+// Multiplication operations
+let num5 = 12;
+let num6 = 8.5;
+let mul_result = num5 * num6;
+println("Multiplication: " + to_string(num5) + " * " + to_string(num6) + " = " + to_string(mul_result));
+
+// Division operations
+let num7 = 144;
+let num8 = 12;
+let div_result = num7 / num8;
+println("Division: " + to_string(num7) + " / " + to_string(num8) + " = " + to_string(div_result));
+
+// Advanced mathematical operations
+println("=== Advanced Mathematical Operations ===");
+let base = 2;
+let exponent = 10;
+let power_result = pow(base, exponent);
+println("Power: " + to_string(base) + "^" + to_string(exponent) + " = " + to_string(power_result));
+
+let square_root_num = 81;
+let sqrt_result = sqrt(square_root_num);
+println("Square root: sqrt(" + to_string(square_root_num) + ") = " + to_string(sqrt_result));
+
+// Memory operations simulation
+println("=== Memory Operations ===");
+memory = sum_result;
+println("Memory stored: " + to_string(memory));
+
+let new_calc = memory * 2;
+println("Memory * 2 = " + to_string(new_calc));
+
+memory = new_calc;
+println("Updated memory: " + to_string(memory));
+
+// String processing
+println("=== String Processing ===");
+let calculator_name = "LangOne Calculator";
+let version = "1.0.0";
+let full_name = calculator_name + " v" + version;
+
+println("Application: " + full_name);
+println("Application length: " + to_string(len(full_name)));
+println("Uppercase: " + upper(full_name));
+
+// Conditional logic based on results
+println("=== Conditional Logic ===");
+if (sum_result > 20) {
+    println("Sum result is greater than 20");
+} else {
+    println("Sum result is 20 or less");
+}
+
+if (div_result == 12) {
+    println("Division result is exactly 12");
+} else {
+    println("Division result is not 12");
+}
+
+// Loop simulation for history
+println("=== Operation History Simulation ===");
+let operation_count = 1;
+let total_operations = 5;
+
+while (operation_count <= total_operations) {
+    let operation_result = operation_count * 10;
+    println("Operation " + to_string(operation_count) + ": " + to_string(operation_count) + " * 10 = " + to_string(operation_result));
+    operation_count = operation_count + 1;
+}
+
+println("=== Calculator Application Complete ===");
+println("All operations completed successfully!");
+println("Final memory value: " + to_string(memory));

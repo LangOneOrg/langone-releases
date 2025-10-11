@@ -1,0 +1,39 @@
+// Standard Library Functions Validation
+println("=== Standard Library Functions Tests ===");
+
+// Math functions
+println("=== Math Functions ===");
+let num1 = 16.0;
+let num2 = -5;
+let num3 = 10.5;
+let num4 = 3.7;
+
+println("Square root of 16: " + to_string(sqrt(num1)));
+println("Absolute value of -5: " + to_string(abs(num2)));
+println("Maximum of 10.5 and 3.7: " + to_string(max(num3, num4)));
+println("Minimum of 10.5 and 3.7: " + to_string(min(num3, num4)));
+println("Power: 2^8 = " + to_string(pow(2, 8)));
+
+// String functions
+println("=== String Functions ===");
+let test_string = "Hello, LangOne!";
+println("Original string: " + test_string);
+println("Length: " + to_string(len(test_string)));
+println("Uppercase: " + upper(test_string));
+println("Lowercase: " + lower(test_string));
+
+// String concatenation
+let str1 = "Hello";
+let str2 = "World";
+let combined = str1 + ", " + str2 + "!";
+println("Concatenated: " + combined);
+println("Length of concatenated: " + to_string(len(combined)));
+
+// Type conversion
+println("=== Type Conversion ===");
+let int_to_str = to_string(42);
+let float_to_str = to_string(3.14159);
+println("Integer to string: '" + int_to_str + "'");
+println("Float to string: '" + float_to_str + "'");
+
+println("✅ Standard library functions validation complete");

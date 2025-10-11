@@ -1,0 +1,108 @@
+// Physics Calculator - Projectile Motion Analysis
+// Real-world application for physics calculations
+
+println("=== PHYSICS: Projectile Motion Calculator ===");
+println("Calculates trajectory, range, and flight time");
+
+// Constants
+let g = 9.81;  // Acceleration due to gravity (m/s²)
+
+// Helper functions for trigonometry (simplified approximations)
+function sin_approx(angle) {
+    // Simple Taylor series approximation for sin
+    let angle_mod = angle;
+    while (angle_mod > 6.28318) {
+        angle_mod = angle_mod - 6.28318;
+    }
+    while (angle_mod < 0) {
+        angle_mod = angle_mod + 6.28318;
+    }
+    
+    let x = angle_mod;
+    let x2 = x * x;
+    let x3 = x2 * x;
+    let x5 = x3 * x2;
+    let x7 = x5 * x2;
+    
+    // Taylor series: sin(x) ≈ x - x³/3! + x⁵/5! - x⁷/7!
+    return x - x3/6.0 + x5/120.0 - x7/5040.0;
+}
+
+function cos_approx(angle) {
+    // Simple Taylor series approximation for cos
+    let angle_mod = angle;
+    while (angle_mod > 6.28318) {
+        angle_mod = angle_mod - 6.28318;
+    }
+    while (angle_mod < 0) {
+        angle_mod = angle_mod + 6.28318;
+    }
+    
+    let x = angle_mod;
+    let x2 = x * x;
+    let x4 = x2 * x2;
+    let x6 = x4 * x2;
+    
+    // Taylor series: cos(x) ≈ 1 - x²/2! + x⁴/4! - x⁶/6!
+    return 1.0 - x2/2.0 + x4/24.0 - x6/720.0;
+}
+
+function calculate_projectile_range(initial_velocity, angle_degrees) {
+    // Convert angle to radians
+    let angle_radians = angle_degrees * 3.14159 / 180.0;
+    
+    // Calculate range using physics formula: R = (v² * sin(2θ)) / g
+    let velocity_squared = initial_velocity * initial_velocity;
+    let sin_2theta = 2.0 * sin_approx(angle_radians) * cos_approx(angle_radians);
+    let range = velocity_squared * sin_2theta / g;
+    
+    return range;
+}
+
+function calculate_flight_time(initial_velocity, angle_degrees) {
+    let angle_radians = angle_degrees * 3.14159 / 180.0;
+    let vertical_velocity = initial_velocity * sin_approx(angle_radians);
+    let flight_time = 2.0 * vertical_velocity / g;
+    return flight_time;
+}
+
+function calculate_max_height(initial_velocity, angle_degrees) {
+    let angle_radians = angle_degrees * 3.14159 / 180.0;
+    let vertical_velocity = initial_velocity * sin_approx(angle_radians);
+    let max_height = (vertical_velocity * vertical_velocity) / (2.0 * g);
+    return max_height;
+}
+
+// Test cases for different projectile scenarios
+println("");
+println("=== TEST SCENARIOS ===");
+
+// Scenario 1: Cannon ball
+println("Scenario 1: Cannon Ball (v=50 m/s, θ=30°)");
+let range1 = calculate_projectile_range(50.0, 30.0);
+let time1 = calculate_flight_time(50.0, 30.0);
+let height1 = calculate_max_height(50.0, 30.0);
+println("Range: " + to_string(round(range1)) + " meters");
+println("Flight time: " + to_string(round(time1)) + " seconds");
+println("Max height: " + to_string(round(height1)) + " meters");
+
+println("");
+println("Scenario 2: Baseball (v=35 m/s, θ=45°)");
+let range2 = calculate_projectile_range(35.0, 45.0);
+let time2 = calculate_flight_time(35.0, 45.0);
+let height2 = calculate_max_height(35.0, 45.0);
+println("Range: " + to_string(round(range2)) + " meters");
+println("Flight time: " + to_string(round(time2)) + " seconds");
+println("Max height: " + to_string(round(height2)) + " meters");
+
+println("");
+println("Scenario 3: Artillery Shell (v=200 m/s, θ=60°)");
+let range3 = calculate_projectile_range(200.0, 60.0);
+let time3 = calculate_flight_time(200.0, 60.0);
+let height3 = calculate_max_height(200.0, 60.0);
+println("Range: " + to_string(round(range3)) + " meters");
+println("Flight time: " + to_string(round(time3)) + " seconds");
+println("Max height: " + to_string(round(height3)) + " meters");
+
+println("");
+println("✅ Physics calculations completed successfully!");

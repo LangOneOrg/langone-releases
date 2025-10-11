@@ -1,0 +1,149 @@
+// Test Security Hardening Features (R16)
+
+println("=== LangOne Security Hardening Test Suite ===");
+
+// Test 1: Security System Initialization
+println("Test 1: Security System Initialization");
+let sec_sys_init = security_system();
+println("Security system: " + to_string(sec_sys_init));
+
+// Test 2: Input Validation
+println("Test 2: Input Validation");
+let input1 = "user@example.com";
+let validator1 = "email";
+let validation_result1 = validate_input(input1, validator1);
+println("Email validation: " + to_string(validation_result1));
+
+let input2 = "password123";
+let validator2 = "password";
+let validation_result2 = validate_input(input2, validator2);
+println("Password validation: " + to_string(validation_result2));
+
+let input3 = "admin";
+let validator3 = "username";
+let validation_result3 = validate_input(input3, validator3);
+println("Username validation: " + to_string(validation_result3));
+
+// Test 3: User Authentication
+println("Test 3: User Authentication");
+let auth_result1 = authenticate_user("alice", "secret123");
+println("Alice authentication: " + to_string(auth_result1));
+
+let auth_result2 = authenticate_user("bob", "password456");
+println("Bob authentication: " + to_string(auth_result2));
+
+let auth_result3 = authenticate_user("admin", "admin123");
+println("Admin authentication: " + to_string(auth_result3));
+
+// Test 4: Permission Checking
+println("Test 4: Permission Checking");
+let perm_result1 = check_permission("alice", "database", "read");
+println("Alice database read: " + to_string(perm_result1));
+
+let perm_result2 = check_permission("bob", "files", "write");
+println("Bob files write: " + to_string(perm_result2));
+
+let perm_result3 = check_permission("admin", "system", "admin");
+println("Admin system admin: " + to_string(perm_result3));
+
+// Test 5: Data Encryption
+println("Test 5: Data Encryption");
+let data1 = "sensitive_data_123";
+let key1 = "encryption_key_1";
+let encrypted1 = encrypt_data(data1, key1);
+println("Encrypted data: " + to_string(encrypted1));
+
+let data2 = "confidential_info";
+let key2 = "secure_key_2";
+let encrypted2 = encrypt_data(data2, key2);
+println("Encrypted data 2: " + to_string(encrypted2));
+
+// Test 6: Data Decryption
+println("Test 6: Data Decryption");
+let encrypted_data1 = "encrypted_sensitive_data_123";
+let key1_decrypt = "encryption_key_1";
+let decrypted1 = decrypt_data(encrypted_data1, key1_decrypt);
+println("Decrypted data: " + to_string(decrypted1));
+
+let encrypted_data2 = "encrypted_confidential_info";
+let key2_decrypt = "secure_key_2";
+let decrypted2 = decrypt_data(encrypted_data2, key2_decrypt);
+println("Decrypted data 2: " + to_string(decrypted2));
+
+// Test 7: Vulnerability Scanning
+println("Test 7: Vulnerability Scanning");
+let code1 = "let password = 'hardcoded123';";
+let vuln_result1 = scan_vulnerabilities(code1);
+println("Vulnerability scan 1: " + to_string(vuln_result1));
+
+let code2 = "let result = eval(user_input);";
+let vuln_result2 = scan_vulnerabilities(code2);
+println("Vulnerability scan 2: " + to_string(vuln_result2));
+
+let code3 = "let data = process_data(input);";
+let vuln_result3 = scan_vulnerabilities(code3);
+println("Vulnerability scan 3: " + to_string(vuln_result3));
+
+// Test 8: Security Statistics
+println("Test 8: Security Statistics");
+let security_stats = security_statistics();
+println("Security statistics: " + to_string(security_stats));
+
+// Test 9: Comprehensive Security Workflow
+println("Test 9: Comprehensive Security Workflow");
+let sec_system = security_system();
+println("System initialized: " + to_string(sec_system));
+
+// Validate user input
+let user_input_workflow = "user@company.com";
+let input_validator_workflow = "email";
+let input_validation_workflow = validate_input(user_input_workflow, input_validator_workflow);
+println("Input validation: " + to_string(input_validation_workflow));
+
+// Authenticate user
+let username_workflow = "john_doe";
+let password_workflow = "secure_password";
+let authentication_workflow = authenticate_user(username_workflow, password_workflow);
+println("User authentication: " + to_string(authentication_workflow));
+
+// Check permissions
+let user_id_workflow = "john_doe";
+let resource_workflow = "user_data";
+let action_workflow = "read";
+let permission_check_workflow = check_permission(user_id_workflow, resource_workflow, action_workflow);
+println("Permission check: " + to_string(permission_check_workflow));
+
+// Encrypt sensitive data
+let sensitive_data_workflow = "credit_card_number_123456789";
+let encryption_key_workflow = "financial_key_2024";
+let encrypted_sensitive_workflow = encrypt_data(sensitive_data_workflow, encryption_key_workflow);
+println("Sensitive data encrypted: " + to_string(encrypted_sensitive_workflow));
+
+// Scan for vulnerabilities
+let application_code_workflow = "function processUserData(data) { return data; }";
+let vulnerability_scan_workflow = scan_vulnerabilities(application_code_workflow);
+println("Application vulnerability scan: " + to_string(vulnerability_scan_workflow));
+
+// Get final security statistics
+let final_stats_workflow = security_statistics();
+println("Final security statistics: " + to_string(final_stats_workflow));
+
+// Test 10: Security Integration with Other Features
+println("Test 10: Security Integration with Other Features");
+
+// Test with array operations
+let data_array = [1.0, 2.0, 3.0, 4.0, 5.0];
+let array_sum = sum(data_array);
+let array_validation = validate_input(to_string(array_sum), "numeric");
+println("Array sum: " + to_string(array_sum));
+println("Array validation: " + to_string(array_validation));
+
+// Test with DataFrame operations
+let df_validation = validate_input("DataFrame created", "text");
+println("DataFrame validation: " + to_string(df_validation));
+
+// Test with visualization
+let chart_validation = validate_input("Chart created", "visualization");
+println("Chart validation: " + to_string(chart_validation));
+
+println("=== Security Hardening Test Suite Completed ===");

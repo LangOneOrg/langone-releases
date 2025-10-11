@@ -1,0 +1,16 @@
+// Simple function test
+project "SimpleFunctionTest" {
+    version = "0.4.0"
+}
+
+println("Testing basic functions...");
+
+// Test basic function
+let result = print("Hello World");
+println("Print result: ", result);
+
+// Test array function
+let arr = array([1, 2, 3]);
+println("Array: ", arr);
+
+println("Test completed!");

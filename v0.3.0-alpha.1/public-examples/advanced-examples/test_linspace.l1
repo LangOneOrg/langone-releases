@@ -1,0 +1,10 @@
+// Test linspace function
+println("🚀 Testing linspace function");
+
+let linspace1 = linspace(0, 1, 5);
+println("Linspace 0-1 with 5 points: " + to_string(linspace1));
+
+let linspace2 = linspace(0, 10, 11);
+println("Linspace 0-10 with 11 points: " + to_string(linspace2));
+
+println("✅ linspace test complete!");

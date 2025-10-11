@@ -1,0 +1,19 @@
+// Minimal Array Test
+println("🚀 Minimal Array Test");
+
+let arr = array([1, 2, 3]);
+println("Array: " + to_string(arr));
+
+let zeros = zeros(5);
+println("Zeros: " + to_string(zeros));
+
+let ones = ones(3);
+println("Ones: " + to_string(ones));
+
+let range = arange(0, 10, 2);
+println("Range: " + to_string(range));
+
+let linspace = linspace(0, 1, 5);
+println("Linspace: " + to_string(linspace));
+
+println("✅ Minimal test complete!");

@@ -1,0 +1,54 @@
+// Performance and Optimization Validation
+println("=== Performance Tests ===");
+
+// Large calculation test
+println("=== Large Calculation Test ===");
+let start_val = 1;
+let iterations = 1000;
+let accumulator = 0;
+
+// Simulate a large loop with manual iteration
+let i = 1;
+let sum = 0;
+while (i <= 100) {
+    sum = sum + i;
+    i = i + 1;
+}
+
+println("Sum of 1 to 100: " + to_string(sum));
+println("Expected: 5050");
+
+// String concatenation performance
+println("=== String Concatenation Test ===");
+let str_base = "Hello";
+let result_str = "";
+let j = 1;
+while (j <= 50) {
+    result_str = str_base + " " + to_string(j);
+    j = j + 1;
+}
+println("String concatenation completed");
+
+// Mathematical operations performance
+println("=== Mathematical Operations Test ===");
+let math_result = 0.0;
+let k = 1;
+while (k <= 100) {
+    let temp = k * k + sqrt(k) + abs(-k);
+    math_result = math_result + temp;
+    k = k + 1;
+}
+println("Mathematical operations completed");
+println("Result: " + to_string(math_result));
+
+// Memory usage test
+println("=== Memory Usage Test ===");
+let var1 = 42;
+let var2 = 3.14159;
+let var3 = "Test string";
+let var4 = true;
+let var5 = var1 + var2;
+let var6 = var3 + " concatenated";
+println("Multiple variables created and used");
+
+println("✅ Performance validation complete");

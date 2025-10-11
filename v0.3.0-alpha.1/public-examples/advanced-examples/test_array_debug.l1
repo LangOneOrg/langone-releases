@@ -1,0 +1,13 @@
+// Debug Array Test
+println("🚀 Debug Array Test");
+
+let arr = array([1, 2, 3]);
+println("Array: " + to_string(arr));
+
+let zeros = zeros(5);
+println("Zeros: " + to_string(zeros));
+
+let ones = ones(3);
+println("Ones: " + to_string(ones));
+
+println("✅ Debug test complete!");

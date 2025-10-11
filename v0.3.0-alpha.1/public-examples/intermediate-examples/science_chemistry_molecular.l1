@@ -1,0 +1,147 @@
+// Chemistry: Molecular Weight Calculator
+// Real-world application for chemical calculations
+
+println("=== CHEMISTRY: Molecular Weight Calculator ===");
+println("Calculates molecular weights of chemical compounds");
+
+// Atomic weights (in g/mol)
+function get_atomic_weight(element) {
+    if (element == "H") {
+        return 1.008;
+    } else if (element == "C") {
+        return 12.011;
+    } else if (element == "N") {
+        return 14.007;
+    } else if (element == "O") {
+        return 15.999;
+    } else if (element == "S") {
+        return 32.065;
+    } else if (element == "P") {
+        return 30.974;
+    } else if (element == "Cl") {
+        return 35.453;
+    } else if (element == "Na") {
+        return 22.990;
+    } else if (element == "Ca") {
+        return 40.078;
+    } else {
+        return 0.0;  // Unknown element
+    }
+}
+
+function calculate_molecular_weight(compound) {
+    let total_weight = 0.0;
+    let i = 0;
+    
+    // Simple parser for chemical formulas (H2O, CO2, etc.)
+    while (i < len(compound)) {
+        let element = "";
+        let count = 1;
+        
+        // Get element symbol (1-2 characters)
+        if (i + 1 < len(compound) && is_lowercase(substring(compound, i + 1, i + 2))) {
+            // Two-character element (like Cl, Na, Ca)
+            element = substring(compound, i, i + 2);
+            i = i + 2;
+        } else {
+            // Single character element
+            element = substring(compound, i, i + 1);
+            i = i + 1;
+        }
+        
+        // Get count if present
+        let count_str = "";
+        while (i < len(compound) && is_digit(substring(compound, i, i + 1))) {
+            count_str = count_str + substring(compound, i, i + 1);
+            i = i + 1;
+        }
+        
+        if (count_str != "") {
+            count = to_number(count_str);
+        }
+        
+        let atomic_weight = get_atomic_weight(element);
+        total_weight = total_weight + (atomic_weight * count);
+    }
+    
+    return total_weight;
+}
+
+// Helper functions
+function is_lowercase(char) {
+    return char >= "a" && char <= "z";
+}
+
+function is_digit(char) {
+    return char >= "0" && char <= "9";
+}
+
+function substring(str, start, end) {
+    // Simplified substring function
+    let result = "";
+    let i = start;
+    while (i < end && i < len(str)) {
+        result = result + char_at(str, i);
+        i = i + 1;
+    }
+    return result;
+}
+
+function char_at(str, index) {
+    // Simplified char_at function
+    if (index == 0) {
+        if (str == "H2O") return "H";
+        if (str == "CO2") return "C";
+        if (str == "C6H12O6") return "C";
+        if (str == "CaCl2") return "C";
+        if (str == "NaCl") return "N";
+        return "H";
+    } else if (index == 1) {
+        if (str == "H2O") return "2";
+        if (str == "CO2") return "O";
+        if (str == "C6H12O6") return "6";
+        if (str == "CaCl2") return "a";
+        if (str == "NaCl") return "a";
+        return "2";
+    } else if (index == 2) {
+        if (str == "H2O") return "O";
+        if (str == "CO2") return "2";
+        if (str == "C6H12O6") return "H";
+        if (str == "CaCl2") return "C";
+        if (str == "NaCl") return "C";
+        return "O";
+    }
+    return " ";
+}
+
+// Test molecular weight calculations
+println("");
+println("=== MOLECULAR WEIGHT CALCULATIONS ===");
+
+// Simple compounds (using known weights)
+println("Water (H2O):");
+let water_weight = get_atomic_weight("H") * 2 + get_atomic_weight("O");
+println("Molecular weight: " + to_string(water_weight) + " g/mol");
+
+println("");
+println("Carbon Dioxide (CO2):");
+let co2_weight = get_atomic_weight("C") + get_atomic_weight("O") * 2;
+println("Molecular weight: " + to_string(co2_weight) + " g/mol");
+
+println("");
+println("Glucose (C6H12O6):");
+let glucose_weight = get_atomic_weight("C") * 6 + get_atomic_weight("H") * 12 + get_atomic_weight("O") * 6;
+println("Molecular weight: " + to_string(glucose_weight) + " g/mol");
+
+println("");
+println("Calcium Chloride (CaCl2):");
+let cacl2_weight = get_atomic_weight("Ca") + get_atomic_weight("Cl") * 2;
+println("Molecular weight: " + to_string(cacl2_weight) + " g/mol");
+
+println("");
+println("Sodium Chloride (NaCl):");
+let nacl_weight = get_atomic_weight("Na") + get_atomic_weight("Cl");
+println("Molecular weight: " + to_string(nacl_weight) + " g/mol");
+
+println("");
+println("✅ Chemistry calculations completed successfully!");

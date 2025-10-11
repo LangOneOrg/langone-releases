@@ -1,0 +1,28 @@
+// Health: Epidemiology - Basic Disease Model
+println("=== HEALTH: Epidemiology Model ===");
+
+function calculate_r0(transmission_rate, recovery_rate) {
+    return transmission_rate / recovery_rate;
+}
+
+function calculate_herd_immunity(r0) {
+    return 1.0 - (1.0 / r0);
+}
+
+// Test basic calculations
+println("");
+println("=== FLU OUTBREAK ===");
+let flu_r0 = calculate_r0(0.15, 0.1);
+let flu_herd = calculate_herd_immunity(flu_r0);
+println("R0: " + to_string(round(flu_r0)));
+println("Herd immunity: " + to_string(round(flu_herd * 100)) + "%");
+
+println("");
+println("=== MEASLES OUTBREAK ===");
+let measles_r0 = calculate_r0(1.5, 0.1);
+let measles_herd = calculate_herd_immunity(measles_r0);
+println("R0: " + to_string(round(measles_r0)));
+println("Herd immunity: " + to_string(round(measles_herd * 100)) + "%");
+
+println("");
+println("✅ Epidemiology calculations completed!");

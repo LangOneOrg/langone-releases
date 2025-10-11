@@ -1,0 +1,101 @@
+// Defense: Military - Ballistics Calculator (Simplified)
+println("=== DEFENSE: Military - Ballistics Calculator ===");
+
+function calculate_trajectory_simple(initial_velocity, angle_degrees) {
+    let g = 9.81;
+    let angle_radians = angle_degrees * 3.14159 / 180.0;
+    
+    // Simplified calculations
+    let range = (initial_velocity * initial_velocity * 0.866) / g;  // Approximate for 30 degrees
+    let flight_time = (2.0 * initial_velocity * 0.5) / g;  // Approximate for 30 degrees
+    let max_height = (initial_velocity * initial_velocity * 0.25) / (2.0 * g);
+    
+    return "Range: " + to_string(round(range)) + "m, " +
+           "Flight time: " + to_string(round(flight_time)) + "s, " +
+           "Max height: " + to_string(round(max_height)) + "m";
+}
+
+function calculate_blast_radius_simple(explosive_mass) {
+    // Simplified blast radius calculation
+    let lethal_radius = 10.0 * sqrt(explosive_mass);
+    let damage_radius = 25.0 * sqrt(explosive_mass);
+    let shockwave_radius = 50.0 * sqrt(explosive_mass);
+    
+    return "Lethal radius: " + to_string(round(lethal_radius)) + "m, " +
+           "Damage radius: " + to_string(round(damage_radius)) + "m, " +
+           "Shockwave radius: " + to_string(round(shockwave_radius)) + "m";
+}
+
+function assess_weapon_effectiveness_simple(weapon_type, target_type) {
+    let effectiveness = 0;
+    
+    if (weapon_type == 1) {  // Rifle
+        if (target_type == 1) {  // Personnel
+            effectiveness = 85;
+        } else if (target_type == 2) {  // Vehicle
+            effectiveness = 25;
+        }
+    } else if (weapon_type == 2) {  // Anti-tank
+        if (target_type == 1) {  // Personnel
+            effectiveness = 60;
+        } else if (target_type == 2) {  // Vehicle
+            effectiveness = 95;
+        }
+    }
+    
+    let effectiveness_level = "";
+    if (effectiveness >= 80) {
+        effectiveness_level = "Highly effective";
+    } else if (effectiveness >= 60) {
+        effectiveness_level = "Effective";
+    } else if (effectiveness >= 40) {
+        effectiveness_level = "Moderately effective";
+    } else {
+        effectiveness_level = "Limited effectiveness";
+    }
+    
+    return "Effectiveness: " + to_string(effectiveness) + "% - " + effectiveness_level;
+}
+
+// Helper function for square root
+function sqrt(value) {
+    let x = value;
+    let i = 0;
+    while (i < 10) {
+        x = (x + value / x) / 2.0;
+        i = i + 1;
+    }
+    return x;
+}
+
+// Test scenarios
+println("");
+println("=== SCENARIO 1: Rifle Trajectory ===");
+let rifle_trajectory = calculate_trajectory_simple(800.0, 30.0);
+println("7.62mm rifle round (800 m/s, 30°):");
+println(rifle_trajectory);
+
+println("");
+println("=== SCENARIO 2: Artillery Shell ===");
+let artillery_trajectory = calculate_trajectory_simple(200.0, 45.0);
+println("105mm artillery shell (200 m/s, 45°):");
+println(artillery_trajectory);
+
+println("");
+println("=== SCENARIO 3: Explosive Blast ===");
+let blast_radius = calculate_blast_radius_simple(5.0);
+println("5kg explosive:");
+println(blast_radius);
+
+println("");
+println("=== SCENARIO 4: Weapon Effectiveness ===");
+let rifle_vs_personnel = assess_weapon_effectiveness_simple(1, 1);
+let anti_tank_vs_vehicle = assess_weapon_effectiveness_simple(2, 2);
+let rifle_vs_vehicle = assess_weapon_effectiveness_simple(1, 2);
+
+println("Rifle vs Personnel: " + rifle_vs_personnel);
+println("Anti-tank vs Vehicle: " + anti_tank_vs_vehicle);
+println("Rifle vs Vehicle: " + rifle_vs_vehicle);
+
+println("");
+println("✅ Military ballistics calculations completed successfully!");

@@ -1,0 +1,97 @@
+// Biology: Population Growth Model
+// Real-world application for ecological modeling
+
+println("=== BIOLOGY: Population Growth Model ===");
+println("Models population dynamics over time");
+
+function exponential_growth(initial_population, growth_rate, time_periods) {
+    let populations = "";
+    let current_population = initial_population;
+    let period = 0;
+    
+    while (period <= time_periods) {
+        populations = populations + "Period " + to_string(period) + ": " + to_string(round(current_population)) + "\n";
+        
+        if (period < time_periods) {
+            current_population = current_population * (1.0 + growth_rate);
+        }
+        period = period + 1;
+    }
+    
+    return populations;
+}
+
+function logistic_growth(initial_population, growth_rate, carrying_capacity, time_periods) {
+    let populations = "";
+    let current_population = initial_population;
+    let period = 0;
+    
+    while (period <= time_periods) {
+        populations = populations + "Period " + to_string(period) + ": " + to_string(round(current_population)) + "\n";
+        
+        if (period < time_periods) {
+            // Logistic growth: P(t+1) = P(t) + r*P(t)*(1 - P(t)/K)
+            let growth_factor = growth_rate * current_population * (1.0 - current_population / carrying_capacity);
+            current_population = current_population + growth_factor;
+        }
+        period = period + 1;
+    }
+    
+    return populations;
+}
+
+function calculate_doubling_time(growth_rate) {
+    // Doubling time = ln(2) / r
+    let ln2 = 0.693147;
+    return ln2 / growth_rate;
+}
+
+function calculate_carrying_capacity_impact(population, carrying_capacity) {
+    let utilization_percent = (population / carrying_capacity) * 100.0;
+    let impact_level = "";
+    
+    if (utilization_percent < 50.0) {
+        impact_level = "Low impact - sustainable";
+    } else if (utilization_percent < 75.0) {
+        impact_level = "Moderate impact - monitoring needed";
+    } else if (utilization_percent < 90.0) {
+        impact_level = "High impact - intervention recommended";
+    } else {
+        impact_level = "Critical impact - immediate action required";
+    }
+    
+    return "Utilization: " + to_string(round(utilization_percent)) + "% - " + impact_level;
+}
+
+// Test scenarios
+println("");
+println("=== SCENARIO 1: Bacteria Population (Exponential Growth) ===");
+println("Initial: 1000 bacteria, Growth rate: 0.2 (20% per period)");
+let bacteria_growth = exponential_growth(1000.0, 0.2, 10);
+println(bacteria_growth);
+
+println("Doubling time: " + to_string(round(calculate_doubling_time(0.2))) + " periods");
+
+println("");
+println("=== SCENARIO 2: Deer Population (Logistic Growth) ===");
+println("Initial: 100 deer, Growth rate: 0.15, Carrying capacity: 500");
+let deer_growth = logistic_growth(100.0, 0.15, 500.0, 20);
+println(deer_growth);
+
+println("");
+println("=== SCENARIO 3: Human Population Analysis ===");
+let human_population = 7800000000.0;  // 7.8 billion
+let earth_carrying_capacity = 10000000000.0;  // 10 billion estimate
+let human_impact = calculate_carrying_capacity_impact(human_population, earth_carrying_capacity);
+println("Current human population: " + to_string(human_population / 1000000000.0) + " billion");
+println("Estimated carrying capacity: " + to_string(earth_carrying_capacity / 1000000000.0) + " billion");
+println(human_impact);
+
+println("");
+println("=== SCENARIO 4: Endangered Species Recovery ===");
+println("Initial: 50 individuals, Growth rate: 0.1, Carrying capacity: 200");
+let recovery_growth = logistic_growth(50.0, 0.1, 200.0, 25);
+println(recovery_growth);
+
+println("");
+println("✅ Biology population modeling completed successfully!");

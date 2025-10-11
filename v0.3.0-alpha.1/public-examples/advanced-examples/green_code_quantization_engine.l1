@@ -1,0 +1,125 @@
+// Green Code: Model Optimization - Quantization Analysis Engine
+// Real-world application for AI model optimization on edge devices
+
+println("=== GREEN CODE: Model Optimization - Quantization Engine ===");
+println("Optimizes LLM models for edge deployment with minimal power consumption");
+
+// Quantization strategies for different precision levels
+function analyze_quantization_strategy(model_size_mb, original_precision) {
+    let quantization_results = "";
+    
+    // FP32 to FP16 quantization (2x reduction)
+    let fp16_size = model_size_mb / 2.0;
+    let fp16_memory_reduction = (model_size_mb - fp16_size) / model_size_mb * 100.0;
+    let fp16_power_reduction = 15.0; // 15% power reduction
+    
+    quantization_results = quantization_results + "FP32 to FP16:\n";
+    quantization_results = quantization_results + "  Size: " + to_string(round(fp16_size)) + "MB (" + to_string(round(fp16_memory_reduction)) + "% reduction)\n";
+    quantization_results = quantization_results + "  Power reduction: " + to_string(round(fp16_power_reduction)) + "%\n";
+    
+    // FP16 to INT8 quantization (2x reduction)
+    let int8_size = fp16_size / 2.0;
+    let int8_memory_reduction = (fp16_size - int8_size) / fp16_size * 100.0;
+    let int8_power_reduction = 25.0; // 25% power reduction
+    
+    quantization_results = quantization_results + "FP16 to INT8:\n";
+    quantization_results = quantization_results + "  Size: " + to_string(round(int8_size)) + "MB (" + to_string(round(int8_memory_reduction)) + "% reduction)\n";
+    quantization_results = quantization_results + "  Power reduction: " + to_string(round(int8_power_reduction)) + "%\n";
+    
+    // INT8 to INT4 quantization (2x reduction)
+    let int4_size = int8_size / 2.0;
+    let int4_memory_reduction = (int8_size - int4_size) / int8_size * 100.0;
+    let int4_power_reduction = 35.0; // 35% power reduction
+    
+    quantization_results = quantization_results + "INT8 to INT4:\n";
+    quantization_results = quantization_results + "  Size: " + to_string(round(int4_size)) + "MB (" + to_string(round(int4_memory_reduction)) + "% reduction)\n";
+    quantization_results = quantization_results + "  Power reduction: " + to_string(round(int4_power_reduction)) + "%\n";
+    
+    return quantization_results;
+}
+
+function calculate_quantization_impact(model_size_mb, target_memory_mb) {
+    let max_quantization_level = "";
+    let final_size = model_size_mb;
+    let total_power_reduction = 0.0;
+    
+    // Determine maximum quantization possible
+    if (model_size_mb / 8.0 <= target_memory_mb) {
+        max_quantization_level = "INT4 (8x reduction)";
+        final_size = model_size_mb / 8.0;
+        total_power_reduction = 60.0;
+    } else if (model_size_mb / 4.0 <= target_memory_mb) {
+        max_quantization_level = "INT8 (4x reduction)";
+        final_size = model_size_mb / 4.0;
+        total_power_reduction = 40.0;
+    } else if (model_size_mb / 2.0 <= target_memory_mb) {
+        max_quantization_level = "FP16 (2x reduction)";
+        final_size = model_size_mb / 2.0;
+        total_power_reduction = 15.0;
+    } else {
+        max_quantization_level = "No quantization possible";
+        total_power_reduction = 0.0;
+    }
+    
+    return "Max quantization: " + max_quantization_level + ", " +
+           "Final size: " + to_string(round(final_size)) + "MB, " +
+           "Power reduction: " + to_string(round(total_power_reduction)) + "%";
+}
+
+function evaluate_accuracy_loss(quantization_level) {
+    let accuracy_loss = 0.0;
+    
+    if (quantization_level == "FP16") {
+        accuracy_loss = 0.5; // 0.5% accuracy loss
+    } else if (quantization_level == "INT8") {
+        accuracy_loss = 2.0; // 2% accuracy loss
+    } else if (quantization_level == "INT4") {
+        accuracy_loss = 5.0; // 5% accuracy loss
+    }
+    
+    let acceptability = "";
+    if (accuracy_loss <= 1.0) {
+        acceptability = "Acceptable for production";
+    } else if (accuracy_loss <= 3.0) {
+        acceptability = "Acceptable with monitoring";
+    } else {
+        acceptability = "Requires validation";
+    }
+    
+    return "Accuracy loss: " + to_string(accuracy_loss) + "% - " + acceptability;
+}
+
+// Test scenarios for different model sizes
+println("");
+println("=== SCENARIO 1: GPT-2 Small (117M parameters, 500MB) ===");
+let gpt2_quantization = analyze_quantization_strategy(500.0, "FP32");
+println(gpt2_quantization);
+let gpt2_impact = calculate_quantization_impact(500.0, 64.0); // Target: 64MB
+println("Edge deployment feasibility: " + gpt2_impact);
+
+println("");
+println("=== SCENARIO 2: BERT Base (110M parameters, 440MB) ===");
+let bert_quantization = analyze_quantization_strategy(440.0, "FP32");
+println(bert_quantization);
+let bert_impact = calculate_quantization_impact(440.0, 128.0); // Target: 128MB
+println("Edge deployment feasibility: " + bert_impact);
+
+println("");
+println("=== SCENARIO 3: TinyBERT (14M parameters, 56MB) ===");
+let tinybert_quantization = analyze_quantization_strategy(56.0, "FP32");
+println(tinybert_quantization);
+let tinybert_impact = calculate_quantization_impact(56.0, 32.0); // Target: 32MB
+println("Edge deployment feasibility: " + tinybert_impact);
+
+println("");
+println("=== ACCURACY IMPACT ANALYSIS ===");
+let fp16_accuracy = evaluate_accuracy_loss("FP16");
+let int8_accuracy = evaluate_accuracy_loss("INT8");
+let int4_accuracy = evaluate_accuracy_loss("INT4");
+
+println("FP16 quantization: " + fp16_accuracy);
+println("INT8 quantization: " + int8_accuracy);
+println("INT4 quantization: " + int4_accuracy);
+
+println("");
+println("✅ Quantization analysis completed successfully!");

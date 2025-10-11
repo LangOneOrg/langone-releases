@@ -1,0 +1,53 @@
+// Data Types and Type Coercion Validation
+println("=== Data Types and Type Coercion Tests ===");
+
+// Test all data types
+let int_val = 42;
+let float_val = 3.14;
+let string_val = "Hello";
+let bool_val = true;
+
+println("Integer: " + to_string(int_val));
+println("Float: " + to_string(float_val));
+println("String: " + string_val);
+println("Boolean: " + to_string(bool_val));
+
+// Type coercion tests
+println("=== Type Coercion Tests ===");
+
+// Integer + Float
+let mixed_add = int_val + float_val;
+println("Integer + Float: " + to_string(mixed_add));
+
+// Float + Integer
+let mixed_add2 = float_val + int_val;
+println("Float + Integer: " + to_string(mixed_add2));
+
+// Integer - Float
+let mixed_sub = int_val - float_val;
+println("Integer - Float: " + to_string(mixed_sub));
+
+// Integer * Float
+let mixed_mul = int_val * float_val;
+println("Integer * Float: " + to_string(mixed_mul));
+
+// Integer / Float
+let mixed_div = int_val / float_val;
+println("Integer / Float: " + to_string(mixed_div));
+
+// Float / Integer
+let mixed_div2 = float_val / int_val;
+println("Float / Integer: " + to_string(mixed_div2));
+
+// Comparison operations with mixed types
+println("=== Comparison Tests ===");
+let compare_result1 = int_val > float_val;
+println("Integer > Float: " + to_string(compare_result1));
+
+let compare_result2 = float_val < int_val;
+println("Float < Integer: " + to_string(compare_result2));
+
+let compare_result3 = int_val == 42.0;
+println("Integer == Float (same value): " + to_string(compare_result3));
+
+println("✅ Data types and type coercion validation complete");
