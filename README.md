@@ -1,145 +1,79 @@
-# LangOne — The AI-Native Green Programming Language for Everyone
+# LangOne Public Releases
 
-**Version:** 0.3.0-alpha.1  
-**Platform:** Windows 10/11 (64-bit)
+Welcome to the LangOne public releases directory!
 
-## What is LangOne?
+## 📦 Current Release
 
-LangOne is a new kind of programming language — intelligent, eco-friendly, and designed for people of all backgrounds to learn coding easily.
+**Latest Version:** v0.3.0-alpha.1  
+**Platform:** Windows 10/11 (64-bit)  
+**Release Date:** October 12, 2025
 
-You don't need prior experience. Just download, run, and start learning!
+### 📖 Full Documentation
+
+For complete installation instructions, tutorials, and documentation, see:
+
+**👉 [LangOne-v0.3.0-alpha.1/README.md](LangOne-v0.3.0-alpha.1/README.md)**
 
 ---
 
-## 🪟 Quick Start (Windows Only)
+## 🚀 Quick Install (Windows)
 
-### Step 1 — Extract LangOne
-
-Unzip this folder to a location like `C:\LangOne`
-
-### Step 2 — Add LangOne to Your PATH (Optional but Recommended)
-
-Open PowerShell as Administrator and run:
+### Option 1: Download with PowerShell (Recommended)
 
 ```powershell
+# Create installation directory
+New-Item -ItemType Directory -Path "C:\LangOne\bin" -Force
+
+# Download LangOne executable
+Invoke-WebRequest -Uri "https://github.com/LangOneOrg/langone-releases/raw/main/langone.exe" `
+                  -OutFile "C:\LangOne\bin\langone.exe"
+
+# Add to PATH
+$env:PATH += ";C:\LangOne\bin"
 setx PATH "$env:PATH;C:\LangOne\bin" /M
-```
 
-Then restart your terminal.
-
-### Step 3 — Test LangOne
-
-Open a new terminal and type:
-
-```powershell
+# Test installation
 langone --version
 ```
 
-You should see the version information!
-
-### Step 4 — Run Your First Program
+### Option 2: Download with Curl
 
 ```powershell
-cd C:\LangOne\examples
-langone hello.l1
-```
+# Create installation directory
+New-Item -ItemType Directory -Path "C:\LangOne\bin" -Force
 
-Expected Output:
+# Download LangOne executable
+curl -L "https://github.com/LangOneOrg/langone-releases/raw/main/langone.exe" `
+     -o "C:\LangOne\bin\langone.exe"
 
-```
-Hello, LangOne!
-Welcome to the future of programming!
-```
+# Add to PATH
+$env:PATH += ";C:\LangOne\bin"
+setx PATH "$env:PATH;C:\LangOne\bin" /M
 
-### Step 5 — Start Learning
-
-Open the `Tutorials` folder and start with:
-
-```powershell
-cd C:\LangOne\Tutorials
-```
-
-Open `01_Hello_World.l1` in any text editor and follow along!
-
----
-
-## 🧩 Example Program
-
-```langone
-# This is your first LangOne program!
-print("Hello, LangOne!")
-```
-
-Expected Output:
-
-```
-Hello, LangOne!
+# Test installation
+langone --version
 ```
 
 ---
 
-## 📚 What's Included
+## 📂 Available Releases
 
-- **bin/langone.exe** - The LangOne compiler and interpreter
-- **Tutorials/** - 6 beginner-friendly lessons to get you started
-- **examples/** - Sample programs to try
-- **README.md** - This file
-- **LICENSE.txt** - Legal information
-- **CHANGELOG.md** - What's new in this version
+- **[v0.3.0-alpha.1](LangOne-v0.3.0-alpha.1/)** - First public alpha release (October 2025)
 
 ---
 
-## 💡 Next Steps
+## 🆘 Need Help?
 
-1. **Complete the Tutorials** - Work through `Tutorials/01_Hello_World.l1` to `06_Green_Code_Principles.l1`
-2. **Experiment** - Modify the examples and see what happens!
-3. **Create Your Own Programs** - Start building your own `.l1` files
-4. **Have Fun** - Programming should be enjoyable and creative!
+Visit the full release folder for:
+- Complete README
+- 6 Beginner Tutorials
+- Example Programs
+- CHANGELOG
+- LICENSE
 
----
-
-## 🔋 System Requirements
-
-- **Operating System:** Windows 10 or Windows 11 (64-bit)
-- **Disk Space:** At least 100 MB free
-- **Memory:** 2 GB RAM minimum (4 GB recommended)
-- **Internet:** Optional (for future AI-assisted features)
+**Start here:** [LangOne-v0.3.0-alpha.1/README.md](LangOne-v0.3.0-alpha.1/README.md)
 
 ---
 
-## ❓ Need Help?
-
-- **Stuck on a tutorial?** Read the comments in the `.l1` files carefully
-- **Found a bug?** Note it down and report it when you can
-- **Have questions?** Check the tutorials again or experiment!
-
----
-
-## 🌍 Why "Green" Programming?
-
-LangOne is designed to be energy-efficient and environmentally conscious. When you write LangOne code, the language automatically optimizes it to use less energy and resources.
-
-You're not just learning to code — you're learning to code sustainably!
-
----
-
-## 📜 License
-
-LangOne is licensed under the Apache License 2.0. See LICENSE.txt for details.
-
----
-
-## 🎉 Welcome to LangOne!
-
-You're now ready to start your programming journey. Remember:
-
-- **Take your time** - Learning is a journey, not a race
-- **Experiment freely** - Try things and see what happens
-- **Have fun** - Enjoy the process of creation!
-
-Happy coding! 🚀
-
----
-
-*LangOne v0.3.0-alpha.1 - October 2025*
+*Note: Replace `LangOneOrg` with your actual GitHub username when uploading to GitHub.*
 
