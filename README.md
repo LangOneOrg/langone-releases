@@ -18,6 +18,8 @@ For complete installation instructions, tutorials, and documentation, see:
 
 ## 🚀 Quick Install (Windows)
 
+> ✅ **No administrator rights required!** These commands set your user PATH.
+
 ### Option 1: Download with PowerShell (Recommended)
 
 ```powershell
@@ -25,14 +27,17 @@ For complete installation instructions, tutorials, and documentation, see:
 New-Item -ItemType Directory -Path "C:\LangOne\bin" -Force
 
 # Download LangOne executable
-Invoke-WebRequest -Uri "https://github.com/LangOneOrg/langone-releases/raw/main/langone.exe" `
+Invoke-WebRequest -Uri "https://github.com/LangOneOrg/langone-releases/raw/main/LangOne-v0.3.0-alpha.1/bin/langone.exe" `
                   -OutFile "C:\LangOne\bin\langone.exe"
 
-# Add to PATH
+# Add to PATH (for current session)
 $env:PATH += ";C:\LangOne\bin"
-setx PATH "$env:PATH;C:\LangOne\bin" /M
 
-# Test installation
+# Add to PATH permanently (user level - no admin needed, no truncation)
+$userPath = [Environment]::GetEnvironmentVariable("Path", "User")
+[Environment]::SetEnvironmentVariable("Path", "$userPath;C:\LangOne\bin", "User")
+
+# Restart PowerShell and test installation
 langone --version
 ```
 
@@ -43,14 +48,17 @@ langone --version
 New-Item -ItemType Directory -Path "C:\LangOne\bin" -Force
 
 # Download LangOne executable
-curl -L "https://github.com/LangOneOrg/langone-releases/raw/main/langone.exe" `
+curl.exe -L "https://github.com/LangOneOrg/langone-releases/raw/main/LangOne-v0.3.0-alpha.1/bin/langone.exe" `
      -o "C:\LangOne\bin\langone.exe"
 
-# Add to PATH
+# Add to PATH (for current session)
 $env:PATH += ";C:\LangOne\bin"
-setx PATH "$env:PATH;C:\LangOne\bin" /M
 
-# Test installation
+# Add to PATH permanently (user level - no admin needed, no truncation)
+$userPath = [Environment]::GetEnvironmentVariable("Path", "User")
+[Environment]::SetEnvironmentVariable("Path", "$userPath;C:\LangOne\bin", "User")
+
+# Restart PowerShell and test installation
 langone --version
 ```
 

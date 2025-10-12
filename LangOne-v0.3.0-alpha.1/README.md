@@ -14,76 +14,24 @@ You don't need prior experience. Just download, run, and start learning!
 
 ## 🚀 Quick Install
 
-Choose your preferred installation method:
+📋 **For complete installation instructions, see:** [**Installation Guide**](../README.md#-quick-install-windows)
 
-### Method 1: Download with PowerShell (Recommended)
-
-Open PowerShell as Administrator and run:
+### Quick Command (PowerShell)
 
 ```powershell
-# Step 1: Create installation directory
+# Create directory and download LangOne
 New-Item -ItemType Directory -Path "C:\LangOne\bin" -Force
-
-# Step 2: Download LangOne
-Invoke-WebRequest -Uri "https://github.com/LangOneOrg/langone-releases/raw/main/langone.exe" `
+Invoke-WebRequest -Uri "https://github.com/LangOneOrg/langone-releases/raw/main/LangOne-v0.3.0-alpha.1/bin/langone.exe" `
                   -OutFile "C:\LangOne\bin\langone.exe"
 
-# Step 3: Add to PATH (for current session)
+# Add to PATH and test
 $env:PATH += ";C:\LangOne\bin"
-
-# Step 4: Add to PATH permanently
-setx PATH "$env:PATH;C:\LangOne\bin" /M
-
-# Step 5: Restart PowerShell and test
+$userPath = [Environment]::GetEnvironmentVariable("Path", "User")
+[Environment]::SetEnvironmentVariable("Path", "$userPath;C:\LangOne\bin", "User")
 langone --version
 ```
 
-### Method 2: Download with Curl
-
-If you have curl installed:
-
-```powershell
-# Step 1: Create installation directory
-New-Item -ItemType Directory -Path "C:\LangOne\bin" -Force
-
-# Step 2: Download LangOne
-curl -L "https://github.com/LangOneOrg/langone-releases/raw/main/langone.exe" `
-     -o "C:\LangOne\bin\langone.exe"
-
-# Step 3: Add to PATH
-$env:PATH += ";C:\LangOne\bin"
-setx PATH "$env:PATH;C:\LangOne\bin" /M
-
-# Step 4: Restart PowerShell and test
-langone --version
-```
-
-### Method 3: Manual Installation
-
-1. **Download** `langone.exe` from the [releases page](https://github.com/LangOneOrg/langone-releases)
-2. **Create folder** `C:\LangOne\bin`
-3. **Move** `langone.exe` to `C:\LangOne\bin\`
-4. **Add to PATH:**
-   - Open PowerShell as Administrator
-   - Run: `setx PATH "$env:PATH;C:\LangOne\bin" /M`
-5. **Restart** your terminal
-6. **Test:** Run `langone --version`
-
----
-
-## 📚 Download Tutorials
-
-After installing LangOne, download the tutorial files:
-
-```powershell
-# Create tutorials directory
-New-Item -ItemType Directory -Path "C:\LangOne\Tutorials" -Force
-
-# Download all tutorials (you'll need to do this for each file)
-# Or clone the repository with tutorials included
-```
-
-**Or** extract the full release package which includes all tutorials!
+> **Note:** No admin rights required! This sets your user PATH.
 
 ---
 
@@ -172,6 +120,34 @@ When you download the complete release:
 
 ## 🆘 Troubleshooting
 
+### ⚠️ "WARNING: The data being saved is truncated to 1024 characters"
+
+**This is critical!** The old `setx` method truncated your PATH and may have broken other programs.
+
+**Solution - Restore and Fix:**
+
+```powershell
+# Check your current user PATH
+$userPath = [Environment]::GetEnvironmentVariable("Path", "User")
+$userPath
+
+# If it looks wrong/truncated, you may need to restore it from system restore
+# or manually re-add missing paths
+
+# To add LangOne correctly (no truncation):
+$userPath = [Environment]::GetEnvironmentVariable("Path", "User")
+if ($userPath -notlike "*C:\LangOne\bin*") {
+    [Environment]::SetEnvironmentVariable("Path", "$userPath;C:\LangOne\bin", "User")
+    Write-Host "✅ LangOne added to PATH successfully (no truncation!)"
+}
+
+# Restart PowerShell to see the changes
+```
+
+> **Why this happened:** `setx PATH "$env:PATH"` has a 1024 char limit. The new method uses .NET APIs with no limit.
+
+---
+
 ### "langone is not recognized as a command"
 
 **Solution:** PATH not set correctly. Try:
@@ -181,20 +157,67 @@ When you download the complete release:
 Test-Path C:\LangOne\bin\langone.exe
 
 # If true, add to PATH again:
-setx PATH "$env:PATH;C:\LangOne\bin" /M
+$env:PATH += ";C:\LangOne\bin"
+$userPath = [Environment]::GetEnvironmentVariable("Path", "User")
+[Environment]::SetEnvironmentVariable("Path", "$userPath;C:\LangOne\bin", "User")
 
 # Then restart PowerShell
 ```
 
 ### Download fails with Invoke-WebRequest
 
-**Solution 1:** Try curl instead  
+**Solution 1:** Try curl instead (Option 2 in the [Installation Guide](../README.md))  
 **Solution 2:** Download manually from GitHub  
 **Solution 3:** Check your internet connection  
 
-### Permission denied errors
+### Permission denied when creating directory
 
-**Solution:** Run PowerShell as Administrator
+**Solution:** Choose a different location where you have write permissions, or run PowerShell normally (admin rights not required for C:\LangOne\bin)
+
+### "Unsupported 16-Bit Application" or "not a valid application for this OS platform"
+
+**This means the downloaded file is corrupted or not a proper Windows executable.**
+
+**Solution - Re-download and verify:**
+
+```powershell
+# Step 1: Check if the file exists and its size
+Get-ChildItem "C:\LangOne\bin\langone.exe" | Select-Object Name, Length, LastWriteTime
+
+# Step 2: Check file type (should show PE32+ executable)
+Get-ItemProperty "C:\LangOne\bin\langone.exe" | Select-Object Name, Length
+
+# Step 3: Delete corrupted file
+Remove-Item "C:\LangOne\bin\langone.exe" -Force
+
+# Step 4: Re-download with verification
+Invoke-WebRequest -Uri "https://github.com/LangOneOrg/langone-releases/raw/main/LangOne-v0.3.0-alpha.1/bin/langone.exe" `
+                  -OutFile "C:\LangOne\bin\langone.exe" `
+                  -UseBasicParsing
+
+# Step 5: Verify download
+if (Test-Path "C:\LangOne\bin\langone.exe") {
+    $fileInfo = Get-Item "C:\LangOne\bin\langone.exe"
+    Write-Host "✅ File downloaded successfully: $($fileInfo.Length) bytes"
+    Write-Host "📅 Downloaded: $($fileInfo.LastWriteTime)"
+} else {
+    Write-Host "❌ Download failed"
+}
+
+# Step 6: Test again
+langone --version
+```
+
+**Alternative: Try curl instead of Invoke-WebRequest**
+
+```powershell
+Remove-Item "C:\LangOne\bin\langone.exe" -ErrorAction SilentlyContinue
+curl.exe -L "https://github.com/LangOneOrg/langone-releases/raw/main/LangOne-v0.3.0-alpha.1/bin/langone.exe" `
+     -o "C:\LangOne\bin\langone.exe"
+langone --version
+```
+
+---
 
 ### "Windows protected your PC" warning
 
