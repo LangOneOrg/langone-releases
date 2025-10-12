@@ -1,3 +1,0 @@
-println("Enter a number:");
-let num = read_number();
-println("You entered: " + to_string(num));

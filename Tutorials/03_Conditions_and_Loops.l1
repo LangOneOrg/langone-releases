@@ -1,0 +1,112 @@
+# ============================================
+# Tutorial 3: Conditions and Loops
+# ============================================
+# Make your programs smart and powerful!
+#
+# What you'll learn:
+# - Making decisions with if/else
+# - Repeating actions with loops
+# - Comparing values
+#
+# Time needed: 20 minutes
+# ============================================
+
+# MAKING DECISIONS: IF STATEMENTS
+# Sometimes we want code to run only in certain situations
+
+age = 18
+
+if age >= 18 {
+    print("You are an adult")
+}
+
+# IF-ELSE: Choose between two options
+temperature = 75
+
+if temperature > 80 {
+    print("It's hot outside!")
+} else {
+    print("Nice weather!")
+}
+
+# MULTIPLE CONDITIONS: IF-ELSE IF-ELSE
+score = 85
+
+if score >= 90 {
+    print("Grade: A - Excellent!")
+} else if score >= 80 {
+    print("Grade: B - Good job!")
+} else if score >= 70 {
+    print("Grade: C - Keep trying!")
+} else {
+    print("Grade: Need improvement")
+}
+
+# COMPARISON OPERATORS
+# == means "is equal to"
+# != means "is not equal to"
+# > means "greater than"
+# < means "less than"
+# >= means "greater than or equal to"
+# <= means "less than or equal to"
+
+x = 10
+y = 20
+
+if x == y {
+    print("x and y are equal")
+}
+
+if x != y {
+    print("x and y are different")
+}
+
+if x < y {
+    print("x is less than y")
+}
+
+# LOOPS: Repeating Actions
+# FOR LOOP - repeat a specific number of times
+
+print("Counting to 5:")
+for i in 1..6 {
+    print(i)
+}
+
+# WHILE LOOP - repeat while a condition is true
+count = 1
+print("Countdown:")
+
+while count <= 3 {
+    print(count)
+    count = count + 1
+}
+print("Done!")
+
+# ============================================
+# TRY IT YOURSELF!
+# ============================================
+# 1. Create a variable with your age
+# 2. Use if/else to print whether you're a teen, adult, or senior
+# 3. Create a loop that counts from 1 to 10
+# 4. Use a loop to print your name 3 times
+
+# Your code here:
+
+
+
+
+# ============================================
+# WHAT YOU LEARNED:
+# ============================================
+# ✓ if statements make decisions
+# ✓ else provides alternative actions
+# ✓ Comparison operators: ==, !=, >, <, >=, <=
+# ✓ for loops repeat a set number of times
+# ✓ while loops repeat while condition is true
+# ✓ Loops and conditions make programs powerful!
+#
+# Ready for the next tutorial?
+# Open: 04_Functions_and_Modules.l1
+# ============================================
+

@@ -1,0 +1,51 @@
+# ============================================
+# Tutorial 1: Hello World
+# ============================================
+# Welcome to your first LangOne program!
+# 
+# What you'll learn:
+# - How to write and run a program
+# - Using the print() function
+# - Understanding comments
+#
+# Time needed: 10 minutes
+# ============================================
+
+# WHAT ARE COMMENTS?
+# Lines starting with # are comments.
+# Comments are notes for humans - the computer ignores them.
+# Use comments to explain what your code does!
+
+# THE PRINT FUNCTION
+# print() is used to display text on the screen
+# Whatever you put between the quotes will appear
+
+print("Hello, World!")
+
+# Let's print more messages
+print("Welcome to LangOne!")
+print("I'm learning to code!")
+
+# ============================================
+# TRY IT YOURSELF!
+# ============================================
+# 1. Add your own print() statement below
+# 2. Save this file
+# 3. Run it: langone 01_Hello_World.l1
+# 4. See your message appear!
+
+# Write your message here:
+
+
+# ============================================
+# WHAT YOU LEARNED:
+# ============================================
+# ✓ Comments start with #
+# ✓ print() displays text on screen
+# ✓ Text goes inside quotes: "like this"
+# ✓ You can have multiple print statements
+#
+# Ready for the next tutorial?
+# Open: 02_Variables_and_Types.l1
+# ============================================
+

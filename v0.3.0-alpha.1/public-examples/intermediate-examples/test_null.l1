@@ -1,2 +1,0 @@
-let x = null;
-println("x is null: " + to_string(x));

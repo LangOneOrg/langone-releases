@@ -1,0 +1,139 @@
+# ============================================
+# Tutorial 5: AI Code Assist
+# ============================================
+# Learn how LangOne's AI helps you code better!
+#
+# What you'll learn:
+# - How LangOne optimizes your code automatically
+# - Understanding AI-powered features
+# - Writing efficient code
+#
+# Time needed: 15 minutes
+# ============================================
+
+# WHAT IS AI CODE ASSIST?
+# LangOne has built-in artificial intelligence that:
+# 1. Makes your code faster automatically
+# 2. Suggests better ways to write code
+# 3. Finds and prevents common mistakes
+# 4. Optimizes memory and CPU usage
+
+print("AI Code Assist Tutorial")
+
+# AUTOMATIC OPTIMIZATION
+# When you write code, LangOne automatically makes it better!
+
+# Example: This simple loop...
+total = 0
+for i in 1..1000 {
+    total = total + i
+}
+print("Sum of 1 to 1000:")
+print(total)
+
+# Behind the scenes, LangOne's AI:
+# - Detects the pattern
+# - Uses a faster algorithm
+# - Reduces memory usage
+# - Makes it run faster!
+
+# YOU DON'T HAVE TO DO ANYTHING!
+# Just write clear, simple code
+# LangOne's AI handles the optimization
+
+# SMART ERROR PREVENTION
+# LangOne's AI catches common mistakes before they happen
+
+# Example: Dividing by zero
+fn safe_divide(a, b) {
+    # LangOne's AI helps detect potential issues
+    if b == 0 {
+        print("Warning: Cannot divide by zero!")
+        return 0
+    }
+    return a / b
+}
+
+result = safe_divide(10, 2)
+print("10 / 2 =")
+print(result)
+
+result = safe_divide(10, 0)
+print("10 / 0 =")
+print(result)
+
+# EFFICIENT MEMORY USAGE
+# LangOne's AI automatically manages memory
+
+# Create a large data structure
+fn process_data() {
+    numbers = []
+    for i in 1..100 {
+        numbers = numbers + [i]
+    }
+    return numbers
+}
+
+# LangOne's AI:
+# - Allocates memory efficiently
+# - Cleans up unused memory
+# - Prevents memory leaks
+# - Optimizes data structures
+
+data = process_data()
+print("Processed 100 numbers efficiently!")
+
+# CODE QUALITY SUGGESTIONS
+# As you write, LangOne suggests improvements
+# (These will show as helpful hints)
+
+# Example: Redundant code
+fn calculate_something(x) {
+    temp = x * 2
+    temp = temp + 5
+    result = temp
+    return result
+}
+
+# LangOne might suggest:
+# "This can be simplified!"
+
+fn calculate_something_better(x) {
+    return (x * 2) + 5
+}
+
+# Both do the same thing, but the second is cleaner!
+
+# PERFORMANCE MONITORING
+# LangOne tracks how efficient your code is
+
+print("Your code is being optimized by AI!")
+print("LangOne makes it fast and efficient!")
+
+# ============================================
+# TRY IT YOURSELF!
+# ============================================
+# 1. Write a loop that adds numbers
+# 2. Notice how fast it runs (AI-optimized!)
+# 3. Write a function with multiple calculations
+# 4. Trust that LangOne is making it efficient!
+
+# Your code here:
+
+
+
+
+# ============================================
+# WHAT YOU LEARNED:
+# ============================================
+# ✓ LangOne has built-in AI assistance
+# ✓ Code is automatically optimized
+# ✓ AI prevents common errors
+# ✓ Memory is managed efficiently
+# ✓ You get suggestions for better code
+# ✓ Just write clear code - AI handles the rest!
+#
+# Ready for the final tutorial?
+# Open: 06_Green_Code_Principles.l1
+# ============================================
+

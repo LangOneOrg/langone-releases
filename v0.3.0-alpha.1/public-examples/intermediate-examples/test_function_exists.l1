@@ -1,3 +1,0 @@
-println("Testing if read_number function exists...");
-let num = read_number();
-println("Function exists and returned: " + to_string(num));

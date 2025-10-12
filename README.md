@@ -1,91 +1,145 @@
-# 🚀 LangOne - Start Your Coding Journey
+# LangOne — The AI-Native Green Programming Language for Everyone
 
-**Welcome to LangOne - the programming language with your personalized code assistant and coach!**
+**Version:** 0.3.0-alpha.1  
+**Platform:** Windows 10/11 (64-bit)
 
-Perfect for **beginners** starting their coding career, even with **no IT background**. LangOne makes programming simple, fast, and intelligent.
+## What is LangOne?
+
+LangOne is a new kind of programming language — intelligent, eco-friendly, and designed for people of all backgrounds to learn coding easily.
+
+You don't need prior experience. Just download, run, and start learning!
 
 ---
 
-## 🎯 **Quick Start (5 Minutes)**
+## 🪟 Quick Start (Windows Only)
 
-### **Step 1: Download LangOne**
-Choose your computer type:
-- **Windows**: [Download for Windows](https://github.com/LangOneOrg/langone-releases/raw/main/public-releases/v0.3.0-alpha.1/binaries/windows-x64/langone.exe)
-- **Mac**: [Download for Mac](https://github.com/LangOneOrg/langone-releases/raw/main/public-releases/v0.3.0-alpha.1/binaries/macos-x64/langone)
-- **Linux**: [Download for Linux](https://github.com/LangOneOrg/langone-releases/raw/main/public-releases/v0.3.0-alpha.1/binaries/linux-x64/langone)
+### Step 1 — Extract LangOne
 
-### **Step 2: Install & Test**
-1. **Windows**: Double-click `langone.exe` → Allow if Windows asks
-2. **Mac/Linux**: Open Terminal → Type `chmod +x langone` → Press Enter
-3. **Test**: Type `langone --version` → Press Enter
+Unzip this folder to a location like `C:\LangOne`
 
-### **Step 3: Your First Program**
-```bash
-# Start coding
-langone repl
+### Step 2 — Add LangOne to Your PATH (Optional but Recommended)
 
-# Type this in the REPL:
-print("Hello, World!");
+Open PowerShell as Administrator and run:
+
+```powershell
+setx PATH "$env:PATH;C:\LangOne\bin" /M
 ```
 
-**🎉 You're coding!** [See full quick start guide →](./v0.3.0-alpha.1/quick-start/)
+Then restart your terminal.
+
+### Step 3 — Test LangOne
+
+Open a new terminal and type:
+
+```powershell
+langone --version
+```
+
+You should see the version information!
+
+### Step 4 — Run Your First Program
+
+```powershell
+cd C:\LangOne\examples
+langone hello.l1
+```
+
+Expected Output:
+
+```
+Hello, LangOne!
+Welcome to the future of programming!
+```
+
+### Step 5 — Start Learning
+
+Open the `Tutorials` folder and start with:
+
+```powershell
+cd C:\LangOne\Tutorials
+```
+
+Open `01_Hello_World.l1` in any text editor and follow along!
 
 ---
 
-## 📚 **Latest Release: v0.3.0-alpha.1**
+## 🧩 Example Program
 
-**Release Date**: October 5, 2025  
-**Codename**: Aurora Intelligence Alpha  
-**Perfect for**: Complete beginners to experienced developers
+```langone
+# This is your first LangOne program!
+print("Hello, LangOne!")
+```
 
-👉 **[View Latest Release Details →](./v0.3.0-alpha.1/README.md)**
+Expected Output:
 
-### **What Makes LangOne Special?**
-- **🧠 Learns from you**: Gets smarter as you code
-- **⚡ Super fast**: 2.3× faster than other languages
-- **🔒 Privacy first**: Your data stays private
-- **🎓 Beginner friendly**: No complex setup needed
-
----
-
-## 📖 **Learning Path**
-
-### **Complete Beginners** (No programming experience)
-1. **[Installation Guide](./v0.3.0-alpha.1/installation-guides/)** - Get LangOne running
-2. **[Quick Start](./v0.3.0-alpha.1/quick-start/)** - Your first 5 minutes
-3. **[Basic Examples](./v0.3.0-alpha.1/public-examples/)** - Simple programs to try
-
-### **Some Programming Experience**
-1. **[Release Notes](./v0.3.0-alpha.1/README.md)** - What's new
-2. **[Tutorials](./v0.3.0-alpha.1/tutorials/)** - Step-by-step lessons
-3. **[Examples](./v0.3.0-alpha.1/examples/)** - Real-world programs
+```
+Hello, LangOne!
+```
 
 ---
 
-## 🛡️ **Security Note**
-- Windows may show a warning (this is normal for new programs)
-- LangOne is safe - it's open source and built by developers
-- Click "Allow" or "More info" → "Run anyway" if Windows asks
+## 📚 What's Included
+
+- **bin/langone.exe** - The LangOne compiler and interpreter
+- **Tutorials/** - 6 beginner-friendly lessons to get you started
+- **examples/** - Sample programs to try
+- **README.md** - This file
+- **LICENSE.txt** - Legal information
+- **CHANGELOG.md** - What's new in this version
 
 ---
 
-## 📞 **Need Help?**
+## 💡 Next Steps
 
-- **🐛 Found a bug?** [Report it here](https://github.com/LangOneOrg/langone/issues)
-- **💡 Have ideas?** [Share feedback](./v0.3.0-alpha.1/community-feedback.md)
-- **📚 Want to learn more?** [Full documentation](./v0.3.0-alpha.1/)
-
----
-
-## 🔄 **Previous Releases**
-- **[v0.2.0-alpha.1](./v0.2.0-alpha.1/)** - Previous version
-- **[v0.1.0-alpha.1](./v0.1.0-alpha.1/)** - Earlier version
-- **[v0.0.1-alpha.1](./v0.0.1-alpha.1/)** - First version
+1. **Complete the Tutorials** - Work through `Tutorials/01_Hello_World.l1` to `06_Green_Code_Principles.l1`
+2. **Experiment** - Modify the examples and see what happens!
+3. **Create Your Own Programs** - Start building your own `.l1` files
+4. **Have Fun** - Programming should be enjoyable and creative!
 
 ---
 
-**LangOne Team**  
-*Making programming accessible to everyone*
+## 🔋 System Requirements
 
-**Website**: https://langone.io  
-**Email**: team@langone.io
+- **Operating System:** Windows 10 or Windows 11 (64-bit)
+- **Disk Space:** At least 100 MB free
+- **Memory:** 2 GB RAM minimum (4 GB recommended)
+- **Internet:** Optional (for future AI-assisted features)
+
+---
+
+## ❓ Need Help?
+
+- **Stuck on a tutorial?** Read the comments in the `.l1` files carefully
+- **Found a bug?** Note it down and report it when you can
+- **Have questions?** Check the tutorials again or experiment!
+
+---
+
+## 🌍 Why "Green" Programming?
+
+LangOne is designed to be energy-efficient and environmentally conscious. When you write LangOne code, the language automatically optimizes it to use less energy and resources.
+
+You're not just learning to code — you're learning to code sustainably!
+
+---
+
+## 📜 License
+
+LangOne is licensed under the Apache License 2.0. See LICENSE.txt for details.
+
+---
+
+## 🎉 Welcome to LangOne!
+
+You're now ready to start your programming journey. Remember:
+
+- **Take your time** - Learning is a journey, not a race
+- **Experiment freely** - Try things and see what happens
+- **Have fun** - Enjoy the process of creation!
+
+Happy coding! 🚀
+
+---
+
+*LangOne v0.3.0-alpha.1 - October 2025*
+

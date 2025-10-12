@@ -1,0 +1,10 @@
+# Welcome to LangOne!
+# This is your first LangOne program.
+# Lines starting with # are comments - they help explain the code.
+
+# The print() function displays text on the screen
+print("Hello, LangOne!")
+print("Welcome to the future of programming!")
+
+# Try changing the text between the quotes and run this file again!
+

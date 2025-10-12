@@ -1,0 +1,128 @@
+# ============================================
+# Tutorial 4: Functions and Modules
+# ============================================
+# Organize your code like a pro!
+#
+# What you'll learn:
+# - Creating your own functions
+# - Function parameters and return values
+# - Reusing code efficiently
+#
+# Time needed: 20 minutes
+# ============================================
+
+# WHAT ARE FUNCTIONS?
+# Functions are reusable blocks of code
+# Instead of writing the same code multiple times,
+# write it once in a function and call it whenever needed!
+
+# CREATING A SIMPLE FUNCTION
+fn greet() {
+    print("Hello, welcome to LangOne!")
+}
+
+# CALLING (USING) THE FUNCTION
+greet()
+greet()  # We can use it as many times as we want!
+
+# FUNCTIONS WITH PARAMETERS
+# Parameters let you pass information to functions
+
+fn greet_person(name) {
+    print("Hello,")
+    print(name)
+    print("Welcome!")
+}
+
+# Call with different names
+greet_person("Alice")
+greet_person("Bob")
+
+# FUNCTIONS WITH MULTIPLE PARAMETERS
+fn introduce(name, age) {
+    print("My name is")
+    print(name)
+    print("I am")
+    print(age)
+    print("years old")
+}
+
+introduce("Alice", 25)
+introduce("Bob", 30)
+
+# FUNCTIONS THAT RETURN VALUES
+# Some functions calculate and return a result
+
+fn add(a, b) {
+    return a + b
+}
+
+# Use the returned value
+result = add(5, 3)
+print("5 + 3 =")
+print(result)
+
+result = add(10, 20)
+print("10 + 20 =")
+print(result)
+
+# MORE USEFUL FUNCTIONS
+fn multiply(x, y) {
+    return x * y
+}
+
+fn is_adult(age) {
+    if age >= 18 {
+        return true
+    } else {
+        return false
+    }
+}
+
+# Using our functions
+product = multiply(4, 5)
+print("4 * 5 =")
+print(product)
+
+adult_status = is_adult(25)
+print("Is 25 an adult?")
+print(adult_status)
+
+# COMBINING FUNCTIONS
+# Functions can use other functions!
+
+fn calculate_rectangle_area(width, height) {
+    return multiply(width, height)
+}
+
+area = calculate_rectangle_area(5, 10)
+print("Rectangle area:")
+print(area)
+
+# ============================================
+# TRY IT YOURSELF!
+# ============================================
+# 1. Create a function that prints your favorite quote
+# 2. Create a function that takes a name and says goodbye
+# 3. Create a function that multiplies a number by 2
+# 4. Create a function that checks if a number is even
+
+# Your code here:
+
+
+
+
+# ============================================
+# WHAT YOU LEARNED:
+# ============================================
+# ✓ Functions group reusable code
+# ✓ fn keyword creates a function
+# ✓ Parameters pass data to functions
+# ✓ return sends values back
+# ✓ Functions make code cleaner and easier
+# ✓ Functions can call other functions
+#
+# Ready for the next tutorial?
+# Open: 05_AI_Code_Assist.l1
+# ============================================
+

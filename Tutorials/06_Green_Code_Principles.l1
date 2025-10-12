@@ -1,0 +1,189 @@
+# ============================================
+# Tutorial 6: Green Code Principles
+# ============================================
+# Learn to code sustainably for our planet!
+#
+# What you'll learn:
+# - What "green coding" means
+# - Why energy-efficient code matters
+# - How LangOne helps save energy
+#
+# Time needed: 15 minutes
+# ============================================
+
+print("Welcome to Green Coding!")
+
+# WHAT IS GREEN CODING?
+# Green coding means writing programs that:
+# - Use less electricity
+# - Run efficiently on any device
+# - Reduce carbon emissions
+# - Minimize resource waste
+
+# WHY DOES IT MATTER?
+# Every time a program runs, it uses:
+# - Electricity from your battery or wall
+# - CPU power (which generates heat)
+# - Memory (which requires power)
+#
+# Billions of programs run every second worldwide
+# Small improvements = HUGE environmental impact!
+
+# HOW LANGONE HELPS: AUTOMATIC ENERGY OPTIMIZATION
+# LangOne automatically makes your code "green"
+
+# Example 1: Efficient Loops
+print("Counting efficiently...")
+
+# Normal way (uses more power):
+# for i in 1..1000000 { ... }
+
+# LangOne's way (uses less power):
+# Automatically optimizes the loop!
+for i in 1..100 {
+    if i % 25 == 0 {
+        print(i)
+    }
+}
+
+print("Loop completed efficiently!")
+
+# Example 2: Smart Resource Management
+# LangOne only uses what's needed
+
+fn calculate_average(numbers) {
+    total = 0
+    count = 0
+    
+    for num in numbers {
+        total = total + num
+        count = count + 1
+    }
+    
+    return total / count
+}
+
+# LangOne ensures:
+# - Minimal memory allocation
+# - Efficient CPU usage
+# - Quick cleanup after done
+
+sample_numbers = [10, 20, 30, 40, 50]
+avg = calculate_average(sample_numbers)
+print("Average calculated efficiently:")
+print(avg)
+
+# Example 3: Energy-Aware Scheduling
+# LangOne knows when to work hard and when to rest
+
+fn process_in_background() {
+    print("Processing data...")
+    
+    # LangOne automatically:
+    # - Reduces CPU usage when possible
+    # - Batches operations efficiently
+    # - Sleeps when idle
+    
+    for i in 1..10 {
+        result = i * i
+    }
+    
+    print("Processing complete!")
+}
+
+process_in_background()
+
+# GREEN CODING BEST PRACTICES
+# (LangOne does these automatically, but good to know!)
+
+# 1. AVOID UNNECESSARY WORK
+# Don't recalculate things you already know
+
+# Less efficient:
+fn calculate_twice() {
+    result1 = 5 * 5
+    result2 = 5 * 5  # Calculating the same thing again!
+    return result1 + result2
+}
+
+# More efficient:
+fn calculate_once() {
+    result = 5 * 5
+    return result + result  # Reuse the result!
+}
+
+# 2. CLEAN UP AFTER YOURSELF
+# LangOne automatically frees memory you're not using
+
+fn create_and_cleanup() {
+    temp_data = [1, 2, 3, 4, 5]
+    # Use the data...
+    total = 0
+    for num in temp_data {
+        total = total + num
+    }
+    # LangOne automatically cleans up temp_data
+    return total
+}
+
+# 3. USE EFFICIENT DATA STRUCTURES
+# LangOne helps you choose the right tools
+
+result = create_and_cleanup()
+print("Efficient calculation:")
+print(result)
+
+# YOUR IMPACT AS A GREEN CODER
+print("")
+print("=== Your Green Coding Impact ===")
+print("By using LangOne, you're:")
+print("✓ Using less electricity")
+print("✓ Reducing carbon emissions")
+print("✓ Making technology sustainable")
+print("✓ Helping protect our planet")
+print("================================")
+
+# ============================================
+# TRY IT YOURSELF!
+# ============================================
+# 1. Write a function that calculates something
+# 2. Avoid recalculating the same values
+# 3. Think about efficiency as you code
+# 4. Remember: LangOne is optimizing behind the scenes!
+
+# Your code here:
+
+
+
+
+# ============================================
+# WHAT YOU LEARNED:
+# ============================================
+# ✓ Green coding saves energy and resources
+# ✓ Small improvements have big environmental impact
+# ✓ LangOne automatically optimizes for efficiency
+# ✓ You can write simple code - LangOne makes it green
+# ✓ Every program you write helps the planet!
+# ✓ Sustainable coding is the future
+#
+# ============================================
+# CONGRATULATIONS!
+# ============================================
+# You've completed all 6 LangOne tutorials!
+# 
+# You now know:
+# ✓ Basic programming concepts
+# ✓ How to write functions
+# ✓ How AI helps your code
+# ✓ How to code sustainably
+#
+# NEXT STEPS:
+# 1. Review any tutorials you want
+# 2. Check out the examples folder
+# 3. Start creating your own programs
+# 4. Keep learning and experimenting!
+#
+# Welcome to the LangOne community!
+# You're now a green coder! 🌱💻
+# ============================================
+

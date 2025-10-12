@@ -1,5 +1,0 @@
-println("Green Code Test");
-
-let power = 5.0;
-let optimized = power * 0.5;
-println("Optimized power: " + to_string(optimized));

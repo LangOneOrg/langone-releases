@@ -1,0 +1,104 @@
+# ============================================
+# Tutorial 2: Variables and Types
+# ============================================
+# Learn how to store and use information!
+#
+# What you'll learn:
+# - What variables are
+# - Different types of data
+# - Basic math operations
+#
+# Time needed: 15 minutes
+# ============================================
+
+# WHAT ARE VARIABLES?
+# Variables are like labeled boxes that store information
+# You can put things in, and take things out
+
+# Creating a variable (we call this "declaring" or "assigning")
+name = "Alice"
+age = 25
+
+# Now we can use these variables
+print("My name is:")
+print(name)
+print("My age is:")
+print(age)
+
+# TYPES OF DATA
+# Numbers - for math and counting
+score = 100
+temperature = 98.6
+
+# Text (we call this a "string")
+greeting = "Hello!"
+city = "New York"
+
+# True/False values (we call this "boolean")
+is_learning = true
+is_expert = false
+
+# USING VARIABLES IN PRINT
+print("Score:")
+print(score)
+
+# BASIC MATH
+# You can do math with variables!
+x = 10
+y = 5
+
+# Addition
+result = x + y
+print("10 + 5 =")
+print(result)
+
+# Subtraction
+result = x - y
+print("10 - 5 =")
+print(result)
+
+# Multiplication
+result = x * y
+print("10 * 5 =")
+print(result)
+
+# Division
+result = x / y
+print("10 / 5 =")
+print(result)
+
+# CHANGING VARIABLES
+# Variables can change their value!
+count = 1
+print("Count is:")
+print(count)
+
+count = 10
+print("Now count is:")
+print(count)
+
+# ============================================
+# TRY IT YOURSELF!
+# ============================================
+# 1. Create a variable with your name
+# 2. Create a variable with your favorite number
+# 3. Print both variables
+# 4. Do some math with numbers!
+
+# Your code here:
+
+
+
+# ============================================
+# WHAT YOU LEARNED:
+# ============================================
+# ✓ Variables store information
+# ✓ Use = to put values in variables
+# ✓ Different types: numbers, text, true/false
+# ✓ You can do math: +, -, *, /
+# ✓ Variables can change their values
+#
+# Ready for the next tutorial?
+# Open: 03_Conditions_and_Loops.l1
+# ============================================
+
